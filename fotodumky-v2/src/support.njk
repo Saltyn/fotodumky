@@ -1,0 +1,34 @@
+---
+layout: base.njk
+permalink: /support/
+pageTitle: Support
+pageDescription: If you like what FotoDumky is doing, here is how to buy the photographer a coffee.
+---
+{% set cryptoReady = site.support.crypto.address and site.support.crypto.network_label %}
+{% set anySupport = site.support.kofi_url or site.support.wise_url or cryptoReady %}
+<div class="page prose">
+  <h1>Support</h1>
+  <p>FotoDumky is free to look at, and will stay that way. If a particular photograph is the one you want, each FotoDumka page has its own quiet <em>Get the original</em> option. This page is for something different — for when you simply like what the project is doing.</p>
+
+  {% if site.support.kofi_url %}
+  <p class="support-primary"><a href="{{ site.support.kofi_url }}" rel="noopener">Buy the photographer a coffee ☕</a></p>
+  {% endif %}
+
+  {% if site.support.wise_url %}
+  <p><a href="{{ site.support.wise_url }}" rel="noopener">Support via Wise</a></p>
+  {% endif %}
+
+  {% if cryptoReady %}
+  <h2>Crypto</h2>
+  <p class="muted">Send only on the network shown below. Anything sent on another network may be lost.</p>
+  <p class="crypto-net">{{ site.support.crypto.network_label }}</p>
+  <p class="crypto-addr"><code>{{ site.support.crypto.address }}</code></p>
+  {% if site.support.crypto.qr_image %}<img class="crypto-qr" src="{{ site.support.crypto.qr_image }}" alt="QR code for the donation address" width="180" height="180" loading="lazy">{% endif %}
+  {% endif %}
+
+  {% if not anySupport %}
+  <p class="muted">Support options are being set up. For now, the best support is the simplest: come back, and bring someone with you.</p>
+  {% endif %}
+
+  <p class="muted">Either way — thank you for looking. That was the point.</p>
+</div>

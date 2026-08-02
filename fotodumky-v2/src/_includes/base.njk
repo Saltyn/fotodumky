@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{% if pageTitle %}{{ pageTitle }} — {{ site.name }}{% else %}{{ site.name }} — {{ site.motto_en }}{% endif %}</title>
+  <meta name="description" content="{{ pageDescription or site.description }}">
+  <link rel="canonical" href="{{ site.url }}{{ page.url }}">
+  <meta property="og:site_name" content="{{ site.name }}">
+  <meta property="og:type" content="{{ ogType or 'website' }}">
+  <meta property="og:title" content="{% if pageTitle %}{{ pageTitle }} — {{ site.name }}{% else %}{{ site.name }}{% endif %}">
+  <meta property="og:description" content="{{ pageDescription or site.description }}">
+  <meta property="og:url" content="{{ site.url }}{{ page.url }}">
+  {% if ogImageUrl %}<meta property="og:image" content="{{ site.url }}{{ ogImageUrl }}">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image" content="{{ site.url }}{{ ogImageUrl }}">{% else %}<meta name="twitter:card" content="summary">{% endif %}
+  <link rel="stylesheet" href="/assets/css/style.css">
+  <link rel="preload" href="/assets/fonts/literata-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="/assets/fonts/literata-cyrillic-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
+  {% if structuredData %}<script type="application/ld+json">{{ structuredData | safe }}</script>{% endif %}
+  {{ site.analytics_snippet | safe }}
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
+<header class="site-head">
+  <a class="wordmark" href="/">FotoDumky</a>
+  <nav class="site-nav" aria-label="Site">
+    <a href="/archive/">Archive</a>
+    <a href="/about/">About</a>
+    <a href="/support/">Support</a>
+    {% if site.social.instagram %}<a href="{{ site.social.instagram }}" rel="noopener">Instagram</a>{% endif %}
+    {% if site.social.tiktok %}<a href="{{ site.social.tiktok }}" rel="noopener">TikTok</a>{% endif %}
+  </nav>
+</header>
+<main id="main">
+{{ content | safe }}
+</main>
+<footer class="site-foot">
+  <p class="foot-motto"><span lang="uk">{{ site.motto_ua }}</span> <span class="foot-en">{{ site.motto_en }}</span></p>
+  {% if site.support.kofi_url or site.support.wise_url or (site.support.crypto.address and site.support.crypto.network_label) %}
+  <p class="foot-support">If you like what FotoDumky is doing, you can <a href="/support/">buy the photographer a coffee</a>.</p>
+  {% endif %}
+  <p class="foot-legal">© {{ site.author }}. All photographs and texts are the author's. <a href="/original/">About originals &amp; licensing</a></p>
+</footer>
+</body>
+</html>

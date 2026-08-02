@@ -1,0 +1,31 @@
+{
+  "name": "FotoDumky",
+  "motto_en": "One frame. One thought.",
+  "motto_ua": "Один кадр. Одна думка.",
+  "description": "FotoDumky is a collection of thoughts expressed through photography. One frame. One thought.",
+  "url": "https://fotodumky.pages.dev",
+  "author": "FotoDumky",
+  "contact_email": "",
+  "original": {
+    "price": "5",
+    "currency": "USD",
+    "label": "Get the original",
+    "blurb": "The high-resolution version, for printing.",
+    "license_short": "Personal use. Print it, frame it, live with it. Not for resale or commercial use.",
+    "kofi_shop_url": ""
+  },
+  "support": {
+    "kofi_url": "",
+    "wise_url": "",
+    "crypto": {
+      "address": "TCL6krQDK4rYhQkR8G6qU5WMBuTN7inxKf",
+      "network_label": "",
+      "qr_image": ""
+    }
+  },
+  "social": {
+    "instagram": "",
+    "tiktok": ""
+  },
+  "analytics_snippet": ""
+}

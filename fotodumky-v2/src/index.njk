@@ -1,0 +1,23 @@
+---
+layout: base.njk
+permalink: /
+---
+<h1 class="sr-only">{{ site.name }} — {{ site.motto_en }} A collection of thoughts expressed through photography.</h1>
+<div class="feed">
+  <p class="feed-intro" lang="uk">{{ site.motto_ua }}</p>
+  {% if collections.fotodumky.length == 0 %}
+  <p class="feed-empty">The first thoughts are on their way.</p>
+  {% endif %}
+  {% for item in collections.fotodumky %}
+  <article class="dumka{% if loop.first %} first{% endif %}">
+    <a class="dumka-image" href="/f/{{ item.data.slug }}/" aria-label="{{ item.data.title }} — open this FotoDumka">
+      {% if loop.first %}{% foto item.inputPath | replace("index.md", item.data.image), item.data.alt, "(min-width: 760px) 720px, 94vw", "eager" %}{% else %}{% foto item.inputPath | replace("index.md", item.data.image), item.data.alt %}{% endif %}
+    </a>
+    <div class="dumka-text">
+      <p class="thought" lang="uk">{{ item.data.thought_ua }}</p>
+      <p class="thought-en">{{ item.data.thought_en }}</p>
+      <a class="dumka-more" href="/f/{{ item.data.slug }}/" aria-label="Open {{ item.data.title }}">·&nbsp;·&nbsp;·</a>
+    </div>
+  </article>
+  {% endfor %}
+</div>

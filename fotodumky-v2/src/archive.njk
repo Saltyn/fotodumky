@@ -1,0 +1,19 @@
+---
+layout: base.njk
+permalink: /archive/
+pageTitle: Archive
+pageDescription: Every published FotoDumka, in one quiet list.
+---
+<div class="page archive">
+  <h1>Archive</h1>
+  <ul class="archive-list">
+    {% for item in collections.fotodumky %}
+    <li>
+      <a href="{{ item.url }}">
+        <span class="a-thought" lang="uk">{{ item.data.thought_ua }}</span>
+        <span class="a-date">{{ item.data.date | humanDate }}</span>
+      </a>
+    </li>
+    {% endfor %}
+  </ul>
+</div>

@@ -1,0 +1,50 @@
+---
+layout: base.njk
+---
+<article class="dumka single">
+  <div class="dumka-image">
+    {% foto page.inputPath | replace("index.md", image), alt, "(min-width: 880px) 840px, 94vw", "eager" %}
+  </div>
+  <div class="dumka-text">
+    <h1 class="thought" lang="uk">{{ thought_ua }}</h1>
+    <p class="thought-en">{{ thought_en }}</p>
+    {% if secondary %}<p class="secondary">{{ secondary }}</p>{% endif %}
+    <p class="meta">
+      {{ date | humanDate }}{% if location %} · {{ location }}{% endif %}{% if series %} · {{ series }}{% endif %}
+    </p>
+  </div>
+
+  {# ---- Original: shown only when a real path to it exists. Never a dead button. ---- #}
+  {% set oPrice = original.price or site.original.price %}
+  {% set oCur = original.currency or site.original.currency %}
+  {% set priceLabel %}{% if oCur == "USD" %}${{ oPrice }}{% else %}{{ oPrice }} {{ oCur }}{% endif %}{% endset %}
+  {% set buyUrl = original.url or site.original.kofi_shop_url %}
+  {% set mailtoBody = "I'd like the high-resolution original of \"" + title + "\" (" + site.url + "/f/" + slug + "/)." | urlencode %}
+
+  {% if original.available and original.mode == "paid" and buyUrl %}
+  <aside class="original">
+    <p class="original-ask">Want the original?</p>
+    <p class="original-what">{{ site.original.blurb }} {{ site.original.license_short }}</p>
+    <a class="original-link" href="{{ buyUrl }}" rel="noopener">{{ site.original.label }} — {{ priceLabel }}</a>
+    <p class="original-fine"><a href="/original/">What you get, and what you may do with it</a></p>
+  </aside>
+  {% elif original.available and (original.mode == "paid" or original.mode == "request") and site.contact_email %}
+  <aside class="original">
+    <p class="original-ask">Want the original?</p>
+    <p class="original-what">{{ site.original.blurb }} {{ site.original.license_short }}</p>
+    <a class="original-link" href="mailto:{{ site.contact_email }}?subject={{ ("Original request: " + slug) | urlencode }}&body={{ mailtoBody }}">Request the original{% if original.mode == "paid" %} — {{ priceLabel }}{% endif %}</a>
+    <p class="original-fine"><a href="/original/">What you get, and what you may do with it</a></p>
+  </aside>
+  {% endif %}
+  {# If neither a purchase URL nor a contact email is configured, no commercial UI is rendered. #}
+
+  <nav class="dumka-nav" aria-label="More FotoDumky">
+    {% set items = collections.fotodumky %}
+    {% for item in items %}{% if item.url == page.url %}
+      {% set nxt = items[loop.index] %}
+      {% set prv = items[loop.index0 - 1] if loop.index0 > 0 %}
+      {% if prv %}<a class="nav-prev" href="{{ prv.url }}">← newer</a>{% else %}<span></span>{% endif %}
+      {% if nxt %}<a class="nav-next" href="{{ nxt.url }}">one more →</a>{% else %}<a class="nav-next" href="/">back to the beginning →</a>{% endif %}
+    {% endif %}{% endfor %}
+  </nav>
+</article>

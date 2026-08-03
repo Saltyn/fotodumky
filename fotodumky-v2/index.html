@@ -69,6 +69,8 @@
       font-weight: 500;
       transition: all 0.2s ease;
       font-size: 0.95rem;
+      cursor: pointer;
+      border: none;
     }
     .btn-primary {
       background-color: #ffffff;
@@ -78,6 +80,7 @@
     .btn-secondary {
       border: 1px solid #444;
       color: #aaa;
+      background: transparent;
     }
     .btn-secondary:hover { border-color: #888; color: #fff; }
 
@@ -135,6 +138,56 @@
       letter-spacing: 1px;
       margin-bottom: 15px;
     }
+
+    /* Modal for Crypto */
+    .modal {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0,0,0,0.85);
+      justify-content: center;
+      align-items: center;
+      z-index: 1000;
+    }
+    .modal-content {
+      background: #181818;
+      padding: 30px;
+      border-radius: 12px;
+      max-width: 400px;
+      width: 90%;
+      text-align: center;
+      border: 1px solid #333;
+      position: relative;
+    }
+    .modal-content img {
+      width: 200px;
+      height: 200px;
+      margin: 15px 0;
+      border-radius: 8px;
+    }
+    .crypto-address {
+      background: #0f0f0f;
+      padding: 10px;
+      border-radius: 6px;
+      font-family: monospace;
+      font-size: 0.85rem;
+      word-break: break-all;
+      color: #7bb384;
+      margin: 15px 0;
+      border: 1px solid #222;
+    }
+    .close-btn {
+      position: absolute;
+      top: 10px;
+      right: 15px;
+      color: #aaa;
+      font-size: 1.5rem;
+      cursor: pointer;
+    }
+    .close-btn:hover { color: #fff; }
   </style>
 </head>
 <body>
@@ -159,8 +212,11 @@
             WANT THE ORIGINAL? ($5)
           </a>
           <a href="https://ko-fi.com/fotodumky" target="_blank" class="btn btn-secondary">
-            Buy the photographer a coffee ☕
+            Buy me a coffee ☕
           </a>
+          <button onclick="openCryptoModal()" class="btn btn-secondary">
+            Donate Crypto (USDT) ₿
+          </button>
         </div>
       </div>
     </article>
@@ -179,8 +235,11 @@
             WANT THE ORIGINAL? ($5)
           </a>
           <a href="https://ko-fi.com/fotodumky" target="_blank" class="btn btn-secondary">
-            Buy the photographer a coffee ☕
+            Buy me a coffee ☕
           </a>
+          <button onclick="openCryptoModal()" class="btn btn-secondary">
+            Donate Crypto (USDT) ₿
+          </button>
         </div>
       </div>
     </article>
@@ -205,6 +264,39 @@
     </p>
     <p style="margin-top:20px; color:#444;">&copy; FotoDumky. All rights reserved.</p>
   </footer>
+
+  <!-- Crypto Modal -->
+  <div id="cryptoModal" class="modal">
+    <div class="modal-content">
+      <span class="close-btn" onclick="closeCryptoModal()">&times;</span>
+      <h3 style="margin-top:10px; font-weight:400;">Donate USDT (TRC20)</h3>
+      <img src="crypto_qr.png" alt="USDT TRC20 QR Code">
+      <div class="crypto-address" id="walletAddr">TCL6krQDK4rYhQkR8G6qU5WMBuTN7inxKf</div>
+      <button onclick="copyAddress()" class="btn btn-primary" style="padding: 8px 16px; font-size: 0.85rem;">
+        Copy Address 📋
+      </button>
+    </div>
+  </div>
+
+  <script>
+    function openCryptoModal() {
+      document.getElementById('cryptoModal').style.display = 'flex';
+    }
+    function closeCryptoModal() {
+      document.getElementById('cryptoModal').style.display = 'none';
+    }
+    function copyAddress() {
+      const addr = document.getElementById('walletAddr').innerText;
+      navigator.clipboard.writeText(addr);
+      alert('Address copied to clipboard!');
+    }
+    window.onclick = function(event) {
+      const modal = document.getElementById('cryptoModal');
+      if (event.target == modal) {
+        modal.style.display = 'none';
+      }
+    }
+  </script>
 
 </body>
 </html>

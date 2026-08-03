@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>FotoDumky — Один кадр. Одна думка.</title>
+  <title>FotoDumky — One frame. One thought.</title>
   <style>
     body {
       background-color: #0f0f0f;
@@ -17,10 +17,11 @@
     }
     header {
       text-align: center;
-      margin-bottom: 40px;
+      margin-bottom: 50px;
+      margin-top: 20px;
     }
-    h1 { font-weight: 300; letter-spacing: 2px; margin-bottom: 5px; }
-    p.tagline { color: #888; font-style: italic; margin-top: 0; }
+    h1 { font-weight: 300; letter-spacing: 3px; margin-bottom: 5px; font-size: 2.5rem; }
+    p.tagline { color: #888; font-style: italic; margin-top: 0; font-size: 1.1rem; }
     
     .card {
       max-width: 900px;
@@ -29,7 +30,8 @@
       border-radius: 8px;
       overflow: hidden;
       box-shadow: 0 10px 30px rgba(0,0,0,0.5);
-      margin-bottom: 50px;
+      margin-bottom: 60px;
+      border: 1px solid #222;
     }
     .card img {
       width: 100%;
@@ -41,16 +43,17 @@
       text-align: center;
     }
     .thought-title {
-      font-size: 1.5rem;
-      letter-spacing: 3px;
+      font-size: 1.4rem;
+      letter-spacing: 2px;
       color: #7bb384;
       margin-bottom: 15px;
+      text-transform: uppercase;
     }
     .thought-text {
       font-size: 1.1rem;
       line-height: 1.6;
       color: #ccc;
-      max-width: 650px;
+      max-width: 700px;
       margin: 0 auto 30px auto;
     }
     .actions {
@@ -65,6 +68,7 @@
       text-decoration: none;
       font-weight: 500;
       transition: all 0.2s ease;
+      font-size: 0.95rem;
     }
     .btn-primary {
       background-color: #ffffff;
@@ -76,6 +80,61 @@
       color: #aaa;
     }
     .btn-secondary:hover { border-color: #888; color: #fff; }
+
+    /* About Section */
+    .about-section {
+      max-width: 900px;
+      width: 100%;
+      background: #141414;
+      border-radius: 8px;
+      padding: 40px;
+      box-sizing: border-box;
+      margin-top: 20px;
+      margin-bottom: 40px;
+      display: flex;
+      gap: 30px;
+      align-items: center;
+      border-top: 2px solid #7bb384;
+    }
+    .about-img {
+      width: 220px;
+      height: 220px;
+      object-fit: cover;
+      border-radius: 50%;
+      flex-shrink: 0;
+      border: 2px solid #333;
+    }
+    .about-text {
+      color: #bbb;
+      line-height: 1.6;
+    }
+    .about-text h3 {
+      color: #fff;
+      margin-top: 0;
+      font-weight: 400;
+      letter-spacing: 1px;
+    }
+
+    /* Footer & AI Free */
+    footer {
+      text-align: center;
+      padding: 30px 10px;
+      color: #666;
+      font-size: 0.85rem;
+      max-width: 700px;
+      border-top: 1px solid #222;
+      width: 100%;
+    }
+    .ai-free-badge {
+      display: inline-block;
+      color: #7bb384;
+      border: 1px solid #7bb384;
+      padding: 4px 12px;
+      border-radius: 12px;
+      font-size: 0.75rem;
+      letter-spacing: 1px;
+      margin-bottom: 15px;
+    }
   </style>
 </head>
 <body>
@@ -96,18 +155,59 @@
           Він завжди поруч - варто лише зупинитися і помітити світло, яке пробиває темряву.
         </p>
         <div class="actions">
-          <!-- Замініть посилання нижче на ваше посилання Ko-fi (Shop item) -->
-          <a href="https://ko-fi.com/s/your-photo-link" target="_blank" class="btn btn-primary">
+          <a href="https://ko-fi.com" target="_blank" class="btn btn-primary">
             WANT THE ORIGINAL? ($5)
           </a>
-          <!-- Замініть посилання нижче на ваше загальне посилання Ko-fi -->
-          <a href="https://ko-fi.com/your-username" target="_blank" class="btn btn-secondary">
+          <a href="https://ko-fi.com" target="_blank" class="btn btn-secondary">
             Buy the photographer a coffee ☕
           </a>
         </div>
       </div>
     </article>
+
+    <!-- FotoDumka #2 -->
+    <article class="card">
+      <img src="IMG_4833_READY.jpg" alt="EVERYTHING BEAUTIFUL HAS ITS TIME">
+      <div class="card-body">
+        <h2 class="thought-title">EVERYTHING BEAUTIFUL HAS ITS TIME</h2>
+        <p class="thought-text">
+          Усе прекрасне має свій термін. Краса миті полягає саме в її плинності - 
+         вмінні розквітнути тоді, коли призначено, і відпустити час без жалю.
+        </p>
+        <div class="actions">
+          <a href="https://ko-fi.com" target="_blank" class="btn btn-primary">
+            WANT THE ORIGINAL? ($5)
+          </a>
+          <a href="https://ko-fi.com" target="_blank" class="btn btn-secondary">
+            Buy the photographer a coffee ☕
+          </a>
+        </div>
+      </div>
+    </article>
+
+    <!-- Photographer Bio Section -->
+    <section class="about-section">
+      <img src="bio_author.jpg" alt="Oleksandr" class="about-img">
+      <div class="about-text">
+        <h3>About the Author</h3>
+        <p>
+          I am Oleksandr — a Kyiv-based photographer and visual thinker. 
+          <strong>FotoDumky</strong> is a collection of thoughts expressed through photography. 
+          The photograph is the visual carrier; the thought is the fundamental content unit. 
+          Observing light, silence, and peace from Kyiv, Ukraine.
+        </p>
+      </div>
+    </section>
   </main>
+
+  <footer>
+    <div class="ai-free-badge">100% REAL PHOTOGRAPHY | AI-FREE ZONE</div>
+    <p>
+      Every frame is captured through an optical lens, not generated by code.<br>
+      No artificial intelligence is used to generate, alter, or synthesize the core photography or thoughts.
+    </p>
+    <p style="margin-top:20px; color:#444;">&copy; FotoDumky. All rights reserved.</p>
+  </footer>
 
 </body>
 </html>

@@ -69,6 +69,11 @@
       width: 100%;
       height: auto;
       display: block;
+      -webkit-user-drag: none;
+      user-select: none;
+      -webkit-user-select: none;
+      -moz-user-select: none;
+      -ms-user-select: none;
     }
     .card-body {
       padding: 30px;
@@ -138,6 +143,8 @@
       border-radius: 50%;
       flex-shrink: 0;
       border: 2px solid #333;
+      -webkit-user-drag: none;
+      user-select: none;
     }
     .about-text {
       color: #bbb;
@@ -333,7 +340,7 @@
       </div>
     </article>
 
-    <!-- FotoDumka #5 (NEW - AT THE END) -->
+    <!-- FotoDumka #5 -->
     <article class="card">
       <img src="IMG_4903.jpg" alt="DON'T RUSH. YOU'RE STILL GREEN." loading="lazy">
       <div class="card-body">
@@ -407,6 +414,13 @@
         modal.style.display = 'none';
       }
     }
+
+    // Disable right-click on all images
+    document.addEventListener('contextmenu', function(e) {
+      if (e.target.tagName === 'IMG') {
+        e.preventDefault();
+      }
+    });
   </script>
 
 </body>

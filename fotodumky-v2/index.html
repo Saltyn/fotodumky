@@ -4,6 +4,38 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>FotoDumky - One frame. One thought.</title>
+  <meta name="description" content="100% Real Photography | AI-Free Zone. Оптична фіксація світла, тиші та людського спостереження з Києва.">
+  <link rel="canonical" href="https://fotodumky.com/">
+
+  <!-- Open Graph / Facebook / LinkedIn -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://fotodumky.com/">
+  <meta property="og:title" content="FotoDumky — One frame. One thought.">
+  <meta property="og:description" content="100% Real Photography | AI-Free Zone. Фотографія — це візуальний носій; думка — фундаментальна одиниця контенту.">
+  <meta property="og:image" content="https://fotodumky.com/IMG_4371.jpg">
+
+  <!-- Twitter -->
+  <meta property="twitter:card" content="summary_large_image">
+  <meta property="twitter:url" content="https://fotodumky.com/">
+  <meta property="twitter:title" content="FotoDumky — One frame. One thought.">
+  <meta property="twitter:description" content="100% Real Photography | AI-Free Zone. Спостереження світла та тиші з Києва.">
+  <meta property="twitter:image" content="https://fotodumky.com/IMG_4371.jpg">
+
+  <!-- Schema.org JSON-LD -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "ImageGallery",
+    "name": "FotoDumky",
+    "description": "100% Real Photography | AI-Free Zone",
+    "url": "https://fotodumky.com",
+    "creator": {
+      "@type": "Person",
+      "name": "Oleksandr"
+    }
+  }
+  </script>
+
   <style>
     body {
       background-color: #0f0f0f;
@@ -188,6 +220,18 @@
       cursor: pointer;
     }
     .close-btn:hover { color: #fff; }
+
+    /* Responsive adjustment for Mobile */
+    @media (max-width: 600px) {
+      .about-section {
+        flex-direction: column;
+        text-align: center;
+      }
+      .about-img {
+        width: 160px;
+        height: 160px;
+      }
+    }
   </style>
 </head>
 <body>
@@ -200,12 +244,12 @@
   <main>
     <!-- FotoDumka #1 -->
     <article class="card">
-      <img src="IMG_4248_READY.jpg" alt="PEACE DOESN'T COME. YOU NOTICE IT">
+      <img src="IMG_4248_READY.jpg" alt="PEACE DOESN'T COME. YOU NOTICE IT" loading="lazy">
       <div class="card-body">
         <h2 class="thought-title">PEACE DOESN'T COME. YOU NOTICE IT</h2>
         <p class="thought-text">
           Спокій не приходить ззовні і його не чекають з майбутнього. 
-          Він завжди поруч - варто лише зупинитися і помітити світло, яке пробиває темряву.
+          Він завжди поруч — варто лише зупинитися і помітити світло, яке пробиває темряву.
         </p>
         <div class="actions">
           <a href="https://ko-fi.com/fotodumky" target="_blank" class="btn btn-primary">
@@ -223,11 +267,11 @@
 
     <!-- FotoDumka #2 -->
     <article class="card">
-      <img src="IMG_4833_READY.jpg" alt="EVERYTHING BEAUTIFUL HAS ITS TIME">
+      <img src="IMG_4833_READY.jpg" alt="EVERYTHING BEAUTIFUL HAS ITS TIME" loading="lazy">
       <div class="card-body">
         <h2 class="thought-title">EVERYTHING BEAUTIFUL HAS ITS TIME</h2>
         <p class="thought-text">
-          Усе прекрасне має свій термін. Краса миті полягає саме в її плинності - 
+          Усе прекрасне має свій термін. Краса миті полягає саме в її плинності — 
           вмінні розквітнути тоді, коли призначено, і відпустити час без жалю.
         </p>
         <div class="actions">
@@ -246,7 +290,7 @@
 
     <!-- FotoDumka #3 -->
     <article class="card">
-      <img src="IMG_4774_READY.jpg" alt="VISIBLE AND INVISIBLE">
+      <img src="IMG_4774_READY.jpg" alt="VISIBLE AND INVISIBLE" loading="lazy">
       <div class="card-body">
         <h2 class="thought-title">VISIBLE AND INVISIBLE</h2>
         <p class="thought-text">
@@ -267,13 +311,35 @@
       </div>
     </article>
 
+    <!-- FotoDumka #4 -->
+    <article class="card">
+      <img src="Self‑made university - TALENT GRADUATES EVERY DAY -- IMG_4371.jpg" alt="TALENT GRADUATES EVERY DAY" loading="lazy">
+      <div class="card-body">
+        <h2 class="thought-title">TALENT GRADUATES EVERY DAY</h2>
+        <p class="thought-text">
+          Nature doesn't issue diplomas. Masterpieces are engineered in silence, thread by thread, every single morning.
+        </p>
+        <div class="actions">
+          <a href="https://ko-fi.com/fotodumky" target="_blank" class="btn btn-primary">
+            WANT THE ORIGINAL? ($5)
+          </a>
+          <a href="https://ko-fi.com/fotodumky" target="_blank" class="btn btn-secondary">
+            Buy me a coffee ☕
+          </a>
+          <button onclick="openCryptoModal()" class="btn btn-secondary">
+            Donate Crypto (USDT) ₿
+          </button>
+        </div>
+      </div>
+    </article>
+
     <!-- Photographer Bio Section -->
     <section class="about-section">
-      <img src="bio_author.jpg" alt="Oleksandr" class="about-img">
+      <img src="bio_author.jpg" alt="Oleksandr" class="about-img" loading="lazy">
       <div class="about-text">
         <h3>About the Author</h3>
         <p>
-          I am Oleksandr - a Kyiv-based photographer and visual thinker. FotoDumky is a collection of thoughts expressed through photography. The photograph is the visual carrier; the thought is the fundamental content unit. Observing light, silence and peace from Kyiv, Ukraine.
+          I am Oleksandr — a Kyiv-based photographer and visual thinker. FotoDumky is a collection of thoughts expressed through photography. The photograph is the visual carrier; the thought is the fundamental content unit. Observing light, silence and peace from Kyiv, Ukraine.
         </p>
       </div>
     </section>
@@ -283,7 +349,7 @@
     <div class="ai-free-badge">100% REAL PHOTOGRAPHY | AI-FREE ZONE</div>
     <p>
       Every frame is captured through an optical lens, not generated by code.<br>
-      No artificial intelligence is used to generate, alter or synthesize the core photography or thoughts.
+      No artificial intelligence is used to generate, alter, or synthesize the core photography or thoughts.
     </p>
     <p style="margin-top:20px; color:#444;">&copy; FotoDumky. All rights reserved.</p>
   </footer>

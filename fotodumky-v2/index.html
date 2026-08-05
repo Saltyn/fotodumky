@@ -64,6 +64,21 @@
       box-shadow: 0 10px 30px rgba(0,0,0,0.5);
       margin-bottom: 60px;
       border: 1px solid #222;
+      position: relative;
+    }
+    .card-catalog-num {
+      position: absolute;
+      top: 15px;
+      right: 15px;
+      background: rgba(15, 15, 15, 0.75);
+      color: #7bb384;
+      border: 1px solid #333;
+      padding: 4px 10px;
+      border-radius: 4px;
+      font-family: monospace;
+      font-size: 0.8rem;
+      letter-spacing: 1px;
+      z-index: 10;
     }
     .card img {
       width: 100%;
@@ -85,6 +100,30 @@
       color: #7bb384;
       margin-bottom: 15px;
       text-transform: uppercase;
+    }
+
+    /* Interactive Expandable Content */
+    .btn-unpack {
+      background: transparent;
+      border: 1px solid #7bb384;
+      color: #7bb384;
+      padding: 10px 20px;
+      border-radius: 20px;
+      font-size: 0.9rem;
+      letter-spacing: 1px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      margin-top: 5px;
+    }
+    .btn-unpack:hover {
+      background: #7bb384;
+      color: #0f0f0f;
+    }
+    .thought-content {
+      display: none;
+      margin-top: 25px;
+      padding-top: 20px;
+      border-top: 1px solid #282828;
     }
     .thought-text {
       font-size: 1.1rem;
@@ -120,6 +159,55 @@
       background: transparent;
     }
     .btn-secondary:hover { border-color: #888; color: #fff; }
+
+    /* Sample Room Section */
+    .sample-room-section {
+      max-width: 900px;
+      width: 100%;
+      background: #141414;
+      border-radius: 8px;
+      padding: 40px;
+      box-sizing: border-box;
+      margin-top: 20px;
+      margin-bottom: 40px;
+      text-align: center;
+      border: 1px solid #222;
+    }
+    .sample-room-title {
+      font-size: 1.6rem;
+      letter-spacing: 2px;
+      color: #ffffff;
+      margin-bottom: 20px;
+      font-weight: 300;
+    }
+    .sample-room-img-wrapper {
+      position: relative;
+      width: 100%;
+      border-radius: 6px;
+      overflow: hidden;
+      margin-bottom: 25px;
+      border: 1px solid #333;
+    }
+    .sample-room-img-wrapper img {
+      width: 100%;
+      height: auto;
+      display: block;
+      -webkit-user-drag: none;
+      user-select: none;
+    }
+    .sample-room-text {
+      color: #aaa;
+      font-size: 1.1rem;
+      line-height: 1.7;
+      max-width: 700px;
+      margin: 0 auto;
+    }
+    .sample-room-quote {
+      color: #7bb384;
+      font-style: italic;
+      font-size: 1.2rem;
+      margin-top: 15px;
+    }
 
     /* About Section */
     .about-section {
@@ -251,114 +339,148 @@
   <main>
     <!-- FotoDumka #1 -->
     <article class="card">
+      <div class="card-catalog-num">FD-001</div>
       <img src="IMG_4248_READY.jpg" alt="PEACE DOESN'T COME. YOU NOTICE IT" loading="lazy">
       <div class="card-body">
         <h2 class="thought-title">PEACE DOESN'T COME. YOU NOTICE IT</h2>
-        <p class="thought-text">
-          Peace doesn't arrive from the outside, nor is it waiting in the future. It is already here - you simply have to stop and notice the light breaking through the dark.
-        </p>
-        <div class="actions">
-          <a href="https://ko-fi.com/fotodumky" target="_blank" class="btn btn-primary">
-            WANT THE ORIGINAL? ($5)
-          </a>
-          <a href="https://ko-fi.com/fotodumky" target="_blank" class="btn btn-secondary">
-            Buy me a coffee ☕
-          </a>
-          <button onclick="openCryptoModal()" class="btn btn-secondary">
-            Donate Crypto (USDT) ₿
-          </button>
+        <button onclick="toggleThought(this)" class="btn-unpack">UNPACK THOUGHT</button>
+        <div class="thought-content">
+          <p class="thought-text">
+            Peace doesn't arrive from the outside, nor is it waiting in the future. It is already here - you simply have to stop and notice the light breaking through the dark.
+          </p>
+          <div class="actions">
+            <a href="https://ko-fi.com/fotodumky" target="_blank" class="btn btn-primary">
+              WANT THE ORIGINAL? ($5)
+            </a>
+            <a href="https://ko-fi.com/fotodumky" target="_blank" class="btn btn-secondary">
+              Buy me a coffee ☕
+            </a>
+            <button onclick="openCryptoModal()" class="btn btn-secondary">
+              Donate Crypto (USDT) ₿
+            </button>
+          </div>
         </div>
       </div>
     </article>
 
     <!-- FotoDumka #2 -->
     <article class="card">
+      <div class="card-catalog-num">FD-002</div>
       <img src="IMG_4833_READY.jpg" alt="EVERYTHING BEAUTIFUL HAS ITS TIME" loading="lazy">
       <div class="card-body">
         <h2 class="thought-title">EVERYTHING BEAUTIFUL HAS ITS TIME</h2>
-        <p class="thought-text">
-          Everything beautiful has its season. The true power of a moment lies in its transience - blooming right on schedule and letting go without regret.
-        </p>
-        <div class="actions">
-          <a href="https://ko-fi.com/fotodumky" target="_blank" class="btn btn-primary">
-            WANT THE ORIGINAL? ($5)
-          </a>
-          <a href="https://ko-fi.com/fotodumky" target="_blank" class="btn btn-secondary">
-            Buy me a coffee ☕
-          </a>
-          <button onclick="openCryptoModal()" class="btn btn-secondary">
-            Donate Crypto (USDT) ₿
-          </button>
+        <button onclick="toggleThought(this)" class="btn-unpack">UNPACK THOUGHT</button>
+        <div class="thought-content">
+          <p class="thought-text">
+            Everything beautiful has its season. The true power of a moment lies in its transience - blooming right on schedule and letting go without regret.
+          </p>
+          <div class="actions">
+            <a href="https://ko-fi.com/fotodumky" target="_blank" class="btn btn-primary">
+              WANT THE ORIGINAL? ($5)
+            </a>
+            <a href="https://ko-fi.com/fotodumky" target="_blank" class="btn btn-secondary">
+              Buy me a coffee ☕
+            </a>
+            <button onclick="openCryptoModal()" class="btn btn-secondary">
+              Donate Crypto (USDT) ₿
+            </button>
+          </div>
         </div>
       </div>
     </article>
 
     <!-- FotoDumka #3 -->
     <article class="card">
+      <div class="card-catalog-num">FD-003</div>
       <img src="IMG_4774_READY.jpg" alt="VISIBLE AND INVISIBLE" loading="lazy">
       <div class="card-body">
         <h2 class="thought-title">VISIBLE AND INVISIBLE</h2>
-        <p class="thought-text">
-          "For by Him all things were created... visible and invisible." (Col. 1:16)
-        </p>
-        <div class="actions">
-          <a href="https://ko-fi.com/fotodumky" target="_blank" class="btn btn-primary">
-            WANT THE ORIGINAL? ($5)
-          </a>
-          <a href="https://ko-fi.com/fotodumky" target="_blank" class="btn btn-secondary">
-            Buy me a coffee ☕
-          </a>
-          <button onclick="openCryptoModal()" class="btn btn-secondary">
-            Donate Crypto (USDT) ₿
-          </button>
+        <button onclick="toggleThought(this)" class="btn-unpack">UNPACK THOUGHT</button>
+        <div class="thought-content">
+          <p class="thought-text">
+            "For by Him all things were created... visible and invisible." (Col. 1:16)
+          </p>
+          <div class="actions">
+            <a href="https://ko-fi.com/fotodumky" target="_blank" class="btn btn-primary">
+              WANT THE ORIGINAL? ($5)
+            </a>
+            <a href="https://ko-fi.com/fotodumky" target="_blank" class="btn btn-secondary">
+              Buy me a coffee ☕
+            </a>
+            <button onclick="openCryptoModal()" class="btn btn-secondary">
+              Donate Crypto (USDT) ₿
+            </button>
+          </div>
         </div>
       </div>
     </article>
 
     <!-- FotoDumka #4 -->
     <article class="card">
+      <div class="card-catalog-num">FD-004</div>
       <img src="IMG_4371.jpg" alt="TALENT GRADUATES EVERY DAY" loading="lazy">
       <div class="card-body">
         <h2 class="thought-title">TALENT GRADUATES EVERY DAY</h2>
-        <p class="thought-text">
-          Nature doesn't issue diplomas. Masterpieces are engineered in silence, thread by thread, every single morning.
-        </p>
-        <div class="actions">
-          <a href="https://ko-fi.com/fotodumky" target="_blank" class="btn btn-primary">
-            WANT THE ORIGINAL? ($5)
-          </a>
-          <a href="https://ko-fi.com/fotodumky" target="_blank" class="btn btn-secondary">
-            Buy me a coffee ☕
-          </a>
-          <button onclick="openCryptoModal()" class="btn btn-secondary">
-            Donate Crypto (USDT) ₿
-          </button>
+        <button onclick="toggleThought(this)" class="btn-unpack">UNPACK THOUGHT</button>
+        <div class="thought-content">
+          <p class="thought-text">
+            Nature doesn't issue diplomas. Masterpieces are engineered in silence, thread by thread, every single morning.
+          </p>
+          <div class="actions">
+            <a href="https://ko-fi.com/fotodumky" target="_blank" class="btn btn-primary">
+              WANT THE ORIGINAL? ($5)
+            </a>
+            <a href="https://ko-fi.com/fotodumky" target="_blank" class="btn btn-secondary">
+              Buy me a coffee ☕
+            </a>
+            <button onclick="openCryptoModal()" class="btn btn-secondary">
+              Donate Crypto (USDT) ₿
+            </button>
+          </div>
         </div>
       </div>
     </article>
 
     <!-- FotoDumka #5 -->
     <article class="card">
+      <div class="card-catalog-num">FD-005</div>
       <img src="IMG_4903.jpg" alt="DON'T RUSH. YOU'RE STILL GREEN." loading="lazy">
       <div class="card-body">
         <h2 class="thought-title">DON'T RUSH. YOU'RE STILL GREEN.</h2>
-        <p class="thought-text">
-          Ripening is not a race. Every stage has its own light, its own purpose and its own time.
-        </p>
-        <div class="actions">
-          <a href="https://ko-fi.com/fotodumky" target="_blank" class="btn btn-primary">
-            WANT THE ORIGINAL? ($5)
-          </a>
-          <a href="https://ko-fi.com/fotodumky" target="_blank" class="btn btn-secondary">
-            Buy me a coffee ☕
-          </a>
-          <button onclick="openCryptoModal()" class="btn btn-secondary">
-            Donate Crypto (USDT) ₿
-          </button>
+        <button onclick="toggleThought(this)" class="btn-unpack">UNPACK THOUGHT</button>
+        <div class="thought-content">
+          <p class="thought-text">
+            Ripening is not a race. Every stage has its own light, its own purpose and its own time.
+          </p>
+          <div class="actions">
+            <a href="https://ko-fi.com/fotodumky" target="_blank" class="btn btn-primary">
+              WANT THE ORIGINAL? ($5)
+            </a>
+            <a href="https://ko-fi.com/fotodumky" target="_blank" class="btn btn-secondary">
+              Buy me a coffee ☕
+            </a>
+            <button onclick="openCryptoModal()" class="btn btn-secondary">
+              Donate Crypto (USDT) ₿
+            </button>
+          </div>
         </div>
       </div>
     </article>
   </main>
+
+  <!-- Sample Room Section -->
+  <section class="sample-room-section">
+    <h2 class="sample-room-title">WHAT IF YOUR WALL COULD THINK?</h2>
+    <div class="sample-room-img-wrapper">
+      <img src="sample_room.jpg" alt="Modern interior featuring a framed FotoDumky print" loading="lazy">
+    </div>
+    <div class="sample-room-text">
+      Some thoughts are worth living with. When positioned inside your space, a frame stops being mere decor and becomes a silent daily anchor.
+      <div class="sample-room-quote">
+        "What you repeatedly see becomes part of how you see."
+      </div>
+    </div>
+  </section>
 
   <!-- Photographer Bio Section -->
   <section class="about-section">
@@ -394,6 +516,17 @@
   </div>
 
   <script>
+    function toggleThought(btn) {
+      const content = btn.nextElementSibling;
+      if (content.style.display === "block") {
+        content.style.display = "none";
+        btn.innerText = "UNPACK THOUGHT";
+      } else {
+        content.style.display = "block";
+        btn.innerText = "CLOSE THOUGHT";
+      }
+    }
+
     function openCryptoModal() {
       document.getElementById('cryptoModal').style.display = 'flex';
     }

@@ -134,9 +134,7 @@
     }
     .actions {
       display: flex;
-      gap: 15px;
       justify-content: center;
-      flex-wrap: wrap;
     }
     .btn {
       padding: 12px 24px;
@@ -218,7 +216,7 @@
       padding: 40px;
       box-sizing: border-box;
       margin-top: 20px;
-      margin-bottom: 40px;
+      margin-bottom: 30px;
       display: flex;
       gap: 30px;
       align-items: center;
@@ -243,6 +241,32 @@
       margin-top: 0;
       font-weight: 400;
       letter-spacing: 1px;
+    }
+
+    /* Support Section (Bottom Global) */
+    .support-section {
+      max-width: 900px;
+      width: 100%;
+      background: #141414;
+      border-radius: 8px;
+      padding: 30px;
+      box-sizing: border-box;
+      margin-bottom: 40px;
+      text-align: center;
+      border: 1px solid #222;
+    }
+    .support-title {
+      font-size: 1.1rem;
+      letter-spacing: 1.5px;
+      color: #888;
+      margin-bottom: 20px;
+      text-transform: uppercase;
+    }
+    .support-actions {
+      display: flex;
+      gap: 15px;
+      justify-content: center;
+      flex-wrap: wrap;
     }
 
     /* Footer & AI Free */
@@ -352,12 +376,6 @@
             <a href="https://ko-fi.com/fotodumky" target="_blank" class="btn btn-primary">
               WANT THE ORIGINAL? ($5)
             </a>
-            <a href="https://ko-fi.com/fotodumky" target="_blank" class="btn btn-secondary">
-              Buy me a coffee ☕
-            </a>
-            <button onclick="openCryptoModal()" class="btn btn-secondary">
-              Donate Crypto (USDT) ₿
-            </button>
           </div>
         </div>
       </div>
@@ -378,12 +396,6 @@
             <a href="https://ko-fi.com/fotodumky" target="_blank" class="btn btn-primary">
               WANT THE ORIGINAL? ($5)
             </a>
-            <a href="https://ko-fi.com/fotodumky" target="_blank" class="btn btn-secondary">
-              Buy me a coffee ☕
-            </a>
-            <button onclick="openCryptoModal()" class="btn btn-secondary">
-              Donate Crypto (USDT) ₿
-            </button>
           </div>
         </div>
       </div>
@@ -404,12 +416,6 @@
             <a href="https://ko-fi.com/fotodumky" target="_blank" class="btn btn-primary">
               WANT THE ORIGINAL? ($5)
             </a>
-            <a href="https://ko-fi.com/fotodumky" target="_blank" class="btn btn-secondary">
-              Buy me a coffee ☕
-            </a>
-            <button onclick="openCryptoModal()" class="btn btn-secondary">
-              Donate Crypto (USDT) ₿
-            </button>
           </div>
         </div>
       </div>
@@ -430,12 +436,6 @@
             <a href="https://ko-fi.com/fotodumky" target="_blank" class="btn btn-primary">
               WANT THE ORIGINAL? ($5)
             </a>
-            <a href="https://ko-fi.com/fotodumky" target="_blank" class="btn btn-secondary">
-              Buy me a coffee ☕
-            </a>
-            <button onclick="openCryptoModal()" class="btn btn-secondary">
-              Donate Crypto (USDT) ₿
-            </button>
           </div>
         </div>
       </div>
@@ -456,12 +456,6 @@
             <a href="https://ko-fi.com/fotodumky" target="_blank" class="btn btn-primary">
               WANT THE ORIGINAL? ($5)
             </a>
-            <a href="https://ko-fi.com/fotodumky" target="_blank" class="btn btn-secondary">
-              Buy me a coffee ☕
-            </a>
-            <button onclick="openCryptoModal()" class="btn btn-secondary">
-              Donate Crypto (USDT) ₿
-            </button>
           </div>
         </div>
       </div>
@@ -490,6 +484,19 @@
       <p>
         I am Oleksandr - a Kyiv-based photographer and visual thinker. FotoDumky is a collection of thoughts expressed through photography. The photograph is the visual carrier; the thought is the fundamental content unit.<br>Observing light, silence and peace from Kyiv, Ukraine.
       </p>
+    </div>
+  </section>
+
+  <!-- Support Section (Bottom Global) -->
+  <section class="support-section">
+    <div class="support-title">Support the Project</div>
+    <div class="support-actions">
+      <a href="https://ko-fi.com/fotodumky" target="_blank" class="btn btn-secondary">
+        Buy me a coffee ☕
+      </a>
+      <button onclick="openCryptoModal()" class="btn btn-secondary">
+        Donate Crypto (USDT) ₿
+      </button>
     </div>
   </section>
 

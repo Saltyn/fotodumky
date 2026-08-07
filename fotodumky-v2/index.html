@@ -179,6 +179,22 @@
       -webkit-user-drag: none;
       user-select: none;
     }
+    .room-switcher {
+      display: flex;
+      gap: 12px;
+      justify-content: center;
+      margin-top: 20px;
+      margin-bottom: 10px;
+    }
+    .btn-room {
+      opacity: 0.5;
+      transition: all 0.2s ease;
+    }
+    .btn-room.active-room {
+      opacity: 1;
+      border-color: #ffffff;
+      color: #ffffff;
+    }
     .fine-print {
       color: #666;
       font-size: 0.75rem;
@@ -517,8 +533,15 @@
   <section class="sample-room-section">
     <h2 class="sample-room-title">WHAT IF YOUR WALL COULD THINK?</h2>
     <div class="sample-room-img-wrapper">
-      <img src="photos/ROOM SAMPLE.png" alt="Modern interior featuring a framed FotoDumky print" loading="lazy">
+      <img id="sampleRoomImg" src="photos/ROOM SAMPLE.png" alt="Modern interior featuring a framed FotoDumky print" loading="lazy">
     </div>
+
+    <!-- Room Switcher Buttons -->
+    <div class="room-switcher">
+      <button onclick="switchRoom('photos/ROOM SAMPLE.png', this)" class="btn-unpack btn-room active-room">ROOM 1 (STILL GREEN)</button>
+      <button onclick="switchRoom('photos/ROOM_SAMPLE_BEE.png', this)" class="btn-unpack btn-room">ROOM 2 (THERAPY)</button>
+    </div>
+
     <div class="fine-print">
       * Interior visualization rendered with AI assist. Photography & thought content on the print remain 100% real and optical.
     </div>
@@ -580,6 +603,12 @@
         content.style.display = "block";
         btn.innerText = "CLOSE THOUGHT";
       }
+    }
+
+    function switchRoom(imgPath, btn) {
+      document.getElementById('sampleRoomImg').src = imgPath;
+      document.querySelectorAll('.btn-room').forEach(b => b.classList.remove('active-room'));
+      btn.classList.add('active-room');
     }
 
     function openCryptoModal() {

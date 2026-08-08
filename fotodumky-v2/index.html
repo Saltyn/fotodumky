@@ -399,6 +399,25 @@
       </div>
     </article>
 
+    <!-- Catalog ID: FD-011 (NEW ITEM) -->
+    <article class="card">
+      <img src="photos/IMG_4678.jpg" alt="EFFICIENCY CAN BE BEAUTIFUL" loading="lazy">
+      <div class="card-body">
+        <h2 class="thought-title">EFFICIENCY CAN BE BEAUTIFUL</h2>
+        <button onclick="toggleThought(this)" class="btn-unpack">UNPACK THOUGHT</button>
+        <div class="thought-content">
+          <p class="thought-text">
+            We think of beauty as something added for pleasure. Nature often works in reverse - stripping away everything unnecessary until function becomes beautiful.<br><br>No excess. No waste. Just perfect efficiency.
+          </p>
+          <div class="actions">
+            <a href="https://ko-fi.com/s/89aad4d03c" target="_blank" class="btn btn-primary">
+              WANT THE ORIGINAL? ($5)
+            </a>
+          </div>
+        </div>
+      </div>
+    </article>
+
     <!-- Catalog ID: FD-003 -->
     <article class="card">
       <img src="photos/IMG_4833_READY.jpg" alt="EVERYTHING BEAUTIFUL HAS ITS TIME" loading="lazy">
@@ -653,7 +672,6 @@
       }
     }
 
-    // Disable right-click on all images
     document.addEventListener('contextmenu', function(e) {
       if (e.target.tagName === 'IMG') {
         e.preventDefault();

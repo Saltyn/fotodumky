@@ -91,18 +91,26 @@
       text-transform: uppercase;
     }
 
+    .thought-primary {
+      font-size: 1.1rem;
+      line-height: 1.6;
+      color: #ccc;
+      max-width: 700px;
+      margin: 0 auto 20px auto;
+    }
+
     /* Interactive Expandable Content */
     .btn-unpack {
       background: transparent;
       border: 1px solid #7bb384;
       color: #7bb384;
-      padding: 10px 20px;
+      padding: 8px 18px;
       border-radius: 20px;
-      font-size: 0.9rem;
+      font-size: 0.85rem;
       letter-spacing: 1px;
       cursor: pointer;
       transition: all 0.3s ease;
-      margin-top: 5px;
+      margin-bottom: 20px;
     }
     .btn-unpack:hover {
       background: #7bb384;
@@ -110,20 +118,24 @@
     }
     .thought-content {
       display: none;
-      margin-top: 25px;
-      padding-top: 20px;
+      margin-top: 15px;
+      padding-top: 15px;
       border-top: 1px solid #282828;
     }
-    .thought-text {
-      font-size: 1.1rem;
+    .thought-text-expanded {
+      font-size: 1.05rem;
       line-height: 1.6;
-      color: #ccc;
+      color: #aaa;
       max-width: 700px;
-      margin: 0 auto 30px auto;
+      margin: 0 auto 20px auto;
+      text-align: left;
     }
     .actions {
       display: flex;
-      justify-content: center;
+      flex-direction: column;
+      align-items: center;
+      gap: 10px;
+      margin-top: 15px;
     }
     .btn {
       padding: 12px 24px;
@@ -146,6 +158,28 @@
       background: transparent;
     }
     .btn-secondary:hover { border-color: #888; color: #fff; }
+
+    .btn-copy-link {
+      background: transparent;
+      border: 1px solid #333;
+      color: #888;
+      padding: 6px 16px;
+      border-radius: 18px;
+      font-size: 0.78rem;
+      letter-spacing: 1px;
+      cursor: pointer;
+      transition: all 0.2s ease;
+    }
+    .btn-copy-link:hover {
+      border-color: #555;
+      color: #ccc;
+    }
+
+    .purchase-subtext {
+      color: #777;
+      font-size: 0.78rem;
+      letter-spacing: 0.5px;
+    }
 
     /* Sample Room Section */
     .sample-room-section {
@@ -366,16 +400,21 @@
       <img src="photos/IMG_4903.jpg" alt="DON'T RUSH. YOU'RE STILL GREEN." loading="lazy">
       <div class="card-body">
         <h2 class="thought-title">DON'T RUSH. YOU'RE STILL GREEN.</h2>
-        <button onclick="toggleThought(this)" class="btn-unpack">UNPACK THOUGHT</button>
+        <p class="thought-primary">
+          "Green" isn't a flaw - it means you are alive, unfolding and still growing.
+        </p>
+        <button onclick="toggleThought(this)" class="btn-unpack">UNPACK REFLECTION</button>
         <div class="thought-content">
-          <p class="thought-text">
+          <p class="thought-text-expanded">
             On the surface, it sounds like a cheeky reminder. But look closer: "green" isn't a flaw - it means you are alive, unfolding and still growing. Immaturity is not a failure; it is the state of being alive. Don't demand instant maturity. Every stage has its own light, purpose and time.
           </p>
-          <div class="actions">
-            <a href="https://ko-fi.com/s/4096f3477b" target="_blank" class="btn btn-primary">
-              WANT THE ORIGINAL? ($25)
-            </a>
-          </div>
+        </div>
+        <div class="actions">
+          <a href="https://ko-fi.com/s/4096f3477b" target="_blank" class="btn btn-primary">
+            GET HIGH-RES DIGITAL FILE ($25)
+          </a>
+          <span class="purchase-subtext">Instant high-resolution digital download</span>
+          <button onclick="copyPermalink('https://fotodumky.com/f/dont-rush-youre-still-green/', this)" class="btn-copy-link">COPY LINK</button>
         </div>
       </div>
     </article>
@@ -385,16 +424,15 @@
       <img src="photos/IMG_4248_READY.jpg" alt="PEACE DOESN'T COME. YOU NOTICE IT" loading="lazy">
       <div class="card-body">
         <h2 class="thought-title">PEACE DOESN'T COME. YOU NOTICE IT</h2>
-        <button onclick="toggleThought(this)" class="btn-unpack">UNPACK THOUGHT</button>
-        <div class="thought-content">
-          <p class="thought-text">
-            Peace doesn't arrive from the outside, nor is it waiting in the future. It is already here - you simply have to stop and notice the light breaking through the dark.
-          </p>
-          <div class="actions">
-            <a href="https://ko-fi.com/s/1b818d1d4f" target="_blank" class="btn btn-primary">
-              WANT THE ORIGINAL? ($25)
-            </a>
-          </div>
+        <p class="thought-primary">
+          Peace doesn't arrive from the outside, nor is it waiting in the future. It is already here - you simply have to stop and notice the light breaking through the dark.
+        </p>
+        <div class="actions">
+          <a href="https://ko-fi.com/s/1b818d1d4f" target="_blank" class="btn btn-primary">
+            GET HIGH-RES DIGITAL FILE ($25)
+          </a>
+          <span class="purchase-subtext">Instant high-resolution digital download</span>
+          <button onclick="copyPermalink('https://fotodumky.com/f/peace-doesnt-come-you-notice-it/', this)" class="btn-copy-link">COPY LINK</button>
         </div>
       </div>
     </article>
@@ -404,16 +442,15 @@
       <img src="photos/IMG_4678.jpg" alt="EFFICIENCY CAN BE BEAUTIFUL" loading="lazy">
       <div class="card-body">
         <h2 class="thought-title">EFFICIENCY CAN BE BEAUTIFUL</h2>
-        <button onclick="toggleThought(this)" class="btn-unpack">UNPACK THOUGHT</button>
-        <div class="thought-content">
-          <p class="thought-text">
-            We think of beauty as something added for pleasure. Nature often works in reverse - stripping away everything unnecessary until function becomes beautiful.<br><br>No excess. No waste. Just perfect efficiency.
-          </p>
-          <div class="actions">
-            <a href="https://ko-fi.com/s/89aad4d03c" target="_blank" class="btn btn-primary">
-              WANT THE ORIGINAL? ($5)
-            </a>
-          </div>
+        <p class="thought-primary">
+          We think of beauty as something added for pleasure. Nature often works in reverse - stripping away everything unnecessary until function becomes beautiful.
+        </p>
+        <div class="actions">
+          <a href="https://ko-fi.com/s/89aad4d03c" target="_blank" class="btn btn-primary">
+            GET HIGH-RES DIGITAL FILE ($5)
+          </a>
+          <span class="purchase-subtext">Instant high-resolution digital download</span>
+          <button onclick="copyPermalink('https://fotodumky.com/f/efficiency-can-be-beautiful/', this)" class="btn-copy-link">COPY LINK</button>
         </div>
       </div>
     </article>
@@ -423,16 +460,15 @@
       <img src="photos/IMG_46700.jpg" alt="PERFECT ENGINEERING" loading="lazy">
       <div class="card-body">
         <h2 class="thought-title">PERFECT ENGINEERING</h2>
-        <button onclick="toggleThought(this)" class="btn-unpack">UNPACK THOUGHT</button>
-        <div class="thought-content">
-          <p class="thought-text">
-            Flawless aerodynamics. Nothing unnecessary. Nothing accidental. No roar of an engine, no turbulence and no stress on the frame. Every detail earns its place.
-          </p>
-          <div class="actions">
-            <a href="https://ko-fi.com/s/8a37c57f98" target="_blank" class="btn btn-primary">
-              WANT THE ORIGINAL? ($5)
-            </a>
-          </div>
+        <p class="thought-primary">
+          Flawless aerodynamics. Nothing unnecessary. Nothing accidental. No roar of an engine, no turbulence and no stress on the frame. Every detail earns its place.
+        </p>
+        <div class="actions">
+          <a href="https://ko-fi.com/s/8a37c57f98" target="_blank" class="btn btn-primary">
+            GET HIGH-RES DIGITAL FILE ($5)
+          </a>
+          <span class="purchase-subtext">Instant high-resolution digital download</span>
+          <button onclick="copyPermalink('https://fotodumky.com/f/perfect-engineering/', this)" class="btn-copy-link">COPY LINK</button>
         </div>
       </div>
     </article>
@@ -442,16 +478,15 @@
       <img src="photos/IMG_47242.jpg" alt="NO FLIGHT PLAN" loading="lazy">
       <div class="card-body">
         <h2 class="thought-title">NO FLIGHT PLAN</h2>
-        <button onclick="toggleThought(this)" class="btn-unpack">UNPACK THOUGHT</button>
-        <div class="thought-content">
-          <p class="thought-text">
-            Not every moment needs a destination. The best plan can be no plan at all.
-          </p>
-          <div class="actions">
-            <a href="https://ko-fi.com/s/b8efd6ca72" target="_blank" class="btn btn-primary">
-              WANT THE ORIGINAL? ($5)
-            </a>
-          </div>
+        <p class="thought-primary">
+          Not every moment needs a destination. The best plan can be no plan at all.
+        </p>
+        <div class="actions">
+          <a href="https://ko-fi.com/s/b8efd6ca72" target="_blank" class="btn btn-primary">
+            GET HIGH-RES DIGITAL FILE ($5)
+          </a>
+          <span class="purchase-subtext">Instant high-resolution digital download</span>
+          <button onclick="copyPermalink('https://fotodumky.com/f/no-flight-plan/', this)" class="btn-copy-link">COPY LINK</button>
         </div>
       </div>
     </article>
@@ -461,16 +496,15 @@
       <img src="photos/IMG_44330.jpg" alt="INFLUENCE HAS NO SIZE" loading="lazy">
       <div class="card-body">
         <h2 class="thought-title">INFLUENCE HAS NO SIZE</h2>
-        <button onclick="toggleThought(this)" class="btn-unpack">UNPACK THOUGHT</button>
-        <div class="thought-content">
-          <p class="thought-text">
-            Size is visible. Influence is not. Visibility belongs to scale, but power belongs to presence. A small presence can redraw the boundaries of an entire field.
-          </p>
-          <div class="actions">
-            <a href="https://ko-fi.com/s/c42920d8fc" target="_blank" class="btn btn-primary">
-              WANT THE ORIGINAL? ($5)
-            </a>
-          </div>
+        <p class="thought-primary">
+          Size is visible. Influence is not. Visibility belongs to scale, but power belongs to presence. A small presence can redraw the boundaries of an entire field.
+        </p>
+        <div class="actions">
+          <a href="https://ko-fi.com/s/c42920d8fc" target="_blank" class="btn btn-primary">
+            GET HIGH-RES DIGITAL FILE ($5)
+          </a>
+          <span class="purchase-subtext">Instant high-resolution digital download</span>
+          <button onclick="copyPermalink('https://fotodumky.com/f/influence-has-no-size/', this)" class="btn-copy-link">COPY LINK</button>
         </div>
       </div>
     </article>
@@ -480,16 +514,15 @@
       <img src="photos/IMG_41850.jpg" alt="ABUNDANCE IS NOT A COUNT" loading="lazy">
       <div class="card-body">
         <h2 class="thought-title">ABUNDANCE IS NOT A COUNT</h2>
-        <button onclick="toggleThought(this)" class="btn-unpack">UNPACK THOUGHT</button>
-        <div class="thought-content">
-          <p class="thought-text">
-            We are trained to count what we have. Abundance begins when we notice what cannot be counted.
-          </p>
-          <div class="actions">
-            <a href="https://ko-fi.com/s/93322881dd" target="_blank" class="btn btn-primary">
-              WANT THE ORIGINAL? ($5)
-            </a>
-          </div>
+        <p class="thought-primary">
+          We are trained to count what we have. Abundance begins when we notice what cannot be counted.
+        </p>
+        <div class="actions">
+          <a href="https://ko-fi.com/s/93322881dd" target="_blank" class="btn btn-primary">
+            GET HIGH-RES DIGITAL FILE ($5)
+          </a>
+          <span class="purchase-subtext">Instant high-resolution digital download</span>
+          <button onclick="copyPermalink('https://fotodumky.com/f/abundance-is-not-a-count/', this)" class="btn-copy-link">COPY LINK</button>
         </div>
       </div>
     </article>
@@ -499,16 +532,15 @@
       <img src="photos/IMG_4833_READY.jpg" alt="EVERYTHING BEAUTIFUL HAS ITS TIME" loading="lazy">
       <div class="card-body">
         <h2 class="thought-title">EVERYTHING BEAUTIFUL HAS ITS TIME</h2>
-        <button onclick="toggleThought(this)" class="btn-unpack">UNPACK THOUGHT</button>
-        <div class="thought-content">
-          <p class="thought-text">
-            Everything beautiful has its season. Maybe beauty isn't meant to last - only to be noticed while it's here.
-          </p>
-          <div class="actions">
-            <a href="https://ko-fi.com/s/bb68418949" target="_blank" class="btn btn-primary">
-              WANT THE ORIGINAL? ($5)
-            </a>
-          </div>
+        <p class="thought-primary">
+          Everything beautiful has its season. Maybe beauty isn't meant to last - only to be noticed while it's here.
+        </p>
+        <div class="actions">
+          <a href="https://ko-fi.com/s/bb68418949" target="_blank" class="btn btn-primary">
+            GET HIGH-RES DIGITAL FILE ($5)
+          </a>
+          <span class="purchase-subtext">Instant high-resolution digital download</span>
+          <button onclick="copyPermalink('https://fotodumky.com/f/everything-beautiful-has-its-time/', this)" class="btn-copy-link">COPY LINK</button>
         </div>
       </div>
     </article>
@@ -518,16 +550,15 @@
       <img src="photos/IMG_4371.jpg" alt="TALENT GRADUATES EVERY DAY" loading="lazy">
       <div class="card-body">
         <h2 class="thought-title">TALENT GRADUATES EVERY DAY</h2>
-        <button onclick="toggleThought(this)" class="btn-unpack">UNPACK THOUGHT</button>
-        <div class="thought-content">
-          <p class="thought-text">
-            Nature doesn't issue diplomas. Masterpieces are engineered in silence, thread by thread, every single morning.
-          </p>
-          <div class="actions">
-            <a href="https://ko-fi.com/s/b3b084f426" target="_blank" class="btn btn-primary">
-              WANT THE ORIGINAL? ($5)
-            </a>
-          </div>
+        <p class="thought-primary">
+          Nature doesn't issue diplomas. Masterpieces are engineered in silence, thread by thread, every single morning.
+        </p>
+        <div class="actions">
+          <a href="https://ko-fi.com/s/b3b084f426" target="_blank" class="btn btn-primary">
+            GET HIGH-RES DIGITAL FILE ($5)
+          </a>
+          <span class="purchase-subtext">Instant high-resolution digital download</span>
+          <button onclick="copyPermalink('https://fotodumky.com/f/talent-graduates-every-day/', this)" class="btn-copy-link">COPY LINK</button>
         </div>
       </div>
     </article>
@@ -537,16 +568,15 @@
       <img src="photos/IMG_45762.jpg" alt="BEAUTY DOESN'T CHASE. IT ATTRACTS." loading="lazy">
       <div class="card-body">
         <h2 class="thought-title">BEAUTY DOESN'T CHASE. IT ATTRACTS.</h2>
-        <button onclick="toggleThought(this)" class="btn-unpack">UNPACK THOUGHT</button>
-        <div class="thought-content">
-          <p class="thought-text">
-            Beauty doesn't chase attention. It simply blooms - and somehow, the right eyes always find it.
-          </p>
-          <div class="actions">
-            <a href="https://ko-fi.com/s/3186cb8f38" target="_blank" class="btn btn-primary">
-              WANT THE ORIGINAL? ($5)
-            </a>
-          </div>
+        <p class="thought-primary">
+          Beauty doesn't chase attention. It simply blooms - and somehow, the right eyes always find it.
+        </p>
+        <div class="actions">
+          <a href="https://ko-fi.com/s/3186cb8f38" target="_blank" class="btn btn-primary">
+            GET HIGH-RES DIGITAL FILE ($5)
+          </a>
+          <span class="purchase-subtext">Instant high-resolution digital download</span>
+          <button onclick="copyPermalink('https://fotodumky.com/f/beauty-doesnt-chase-it-attracts/', this)" class="btn-copy-link">COPY LINK</button>
         </div>
       </div>
     </article>
@@ -556,16 +586,15 @@
       <img src="photos/IMG_7777.jpg" alt="TO PRESERVE LIFE IS TO RISK LOSING IT" loading="lazy">
       <div class="card-body">
         <h2 class="thought-title">TO PRESERVE LIFE IS TO RISK LOSING IT</h2>
-        <button onclick="toggleThought(this)" class="btn-unpack">UNPACK THOUGHT</button>
-        <div class="thought-content">
-          <p class="thought-text">
-            We can spend so much time avoiding danger that we accidentally avoid living.
-          </p>
-          <div class="actions">
-            <a href="https://ko-fi.com/s/64e9047f77" target="_blank" class="btn btn-primary">
-              WANT THE ORIGINAL? ($5)
-            </a>
-          </div>
+        <p class="thought-primary">
+          We can spend so much time avoiding danger that we accidentally avoid living.
+        </p>
+        <div class="actions">
+          <a href="https://ko-fi.com/s/64e9047f77" target="_blank" class="btn btn-primary">
+            GET HIGH-RES DIGITAL FILE ($5)
+          </a>
+          <span class="purchase-subtext">Instant high-resolution digital download</span>
+          <button onclick="copyPermalink('https://fotodumky.com/f/to-preserve-life-is-to-risk-losing-it/', this)" class="btn-copy-link">COPY LINK</button>
         </div>
       </div>
     </article>
@@ -575,16 +604,15 @@
       <img src="photos/IMG_88880.jpg" alt="SHE HAS A PURPOSE. WE HAVE THERAPY." loading="lazy">
       <div class="card-body">
         <h2 class="thought-title">SHE HAS A PURPOSE. WE HAVE THERAPY.</h2>
-        <button onclick="toggleThought(this)" class="btn-unpack">UNPACK THOUGHT</button>
-        <div class="thought-content">
-          <p class="thought-text">
-            A bee never asks what life is for. It simply knows. We invented philosophy to ask the question - and therapy to cope with the answer.
-          </p>
-          <div class="actions">
-            <a href="https://ko-fi.com/s/a9af9f073e" target="_blank" class="btn btn-primary">
-              WANT THE ORIGINAL? ($25)
-            </a>
-          </div>
+        <p class="thought-primary">
+          A bee never asks what life is for. It simply knows. We invented philosophy to ask the question - and therapy to cope with the answer.
+        </p>
+        <div class="actions">
+          <a href="https://ko-fi.com/s/a9af9f073e" target="_blank" class="btn btn-primary">
+            GET HIGH-RES DIGITAL FILE ($25)
+          </a>
+          <span class="purchase-subtext">Instant high-resolution digital download</span>
+          <button onclick="copyPermalink('https://fotodumky.com/f/she-has-a-purpose-we-have-therapy/', this)" class="btn-copy-link">COPY LINK</button>
         </div>
       </div>
     </article>
@@ -594,16 +622,15 @@
       <img src="photos/IMG_42030.jpg" alt="EVERY LEAF IS COUNTED" loading="lazy">
       <div class="card-body">
         <h2 class="thought-title">EVERY LEAF IS COUNTED</h2>
-        <button onclick="toggleThought(this)" class="btn-unpack">UNPACK THOUGHT</button>
-        <div class="thought-content">
-          <p class="thought-text">
-            Every leaf is counted. So is every quiet moment we thought went unnoticed.
-          </p>
-          <div class="actions">
-            <a href="https://ko-fi.com/s/48b592209d" target="_blank" class="btn btn-primary">
-              WANT THE ORIGINAL? ($5)
-            </a>
-          </div>
+        <p class="thought-primary">
+          Every leaf is counted. So is every quiet moment we thought went unnoticed.
+        </p>
+        <div class="actions">
+          <a href="https://ko-fi.com/s/48b592209d" target="_blank" class="btn btn-primary">
+            GET HIGH-RES DIGITAL FILE ($5)
+          </a>
+          <span class="purchase-subtext">Instant high-resolution digital download</span>
+          <button onclick="copyPermalink('https://fotodumky.com/f/every-leaf-is-counted/', this)" class="btn-copy-link">COPY LINK</button>
         </div>
       </div>
     </article>
@@ -613,16 +640,15 @@
       <img src="photos/IMG_1048.jpg" alt="THE WEIGHT OF RED" loading="lazy">
       <div class="card-body">
         <h2 class="thought-title">THE WEIGHT OF RED</h2>
-        <button onclick="toggleThought(this)" class="btn-unpack">UNPACK THOUGHT</button>
-        <div class="thought-content">
-          <p class="thought-text">
-            Some moments weigh more in memory than they ever did in life.
-          </p>
-          <div class="actions">
-            <a href="https://ko-fi.com/s/fde3696d4d" target="_blank" class="btn btn-primary">
-              WANT THE ORIGINAL? ($100)
-            </a>
-          </div>
+        <p class="thought-primary">
+          Some moments weigh more in memory than they ever did in life.
+        </p>
+        <div class="actions">
+          <a href="https://ko-fi.com/s/fde3696d4d" target="_blank" class="btn btn-primary">
+            GET HIGH-RES DIGITAL FILE ($100)
+          </a>
+          <span class="purchase-subtext">Instant high-resolution digital download</span>
+          <button onclick="copyPermalink('https://fotodumky.com/f/the-weight-of-red/', this)" class="btn-copy-link">COPY LINK</button>
         </div>
       </div>
     </article>
@@ -632,16 +658,15 @@
       <img src="photos/IMG_4774_READY.jpg" alt="VISIBLE AND INVISIBLE" loading="lazy">
       <div class="card-body">
         <h2 class="thought-title">VISIBLE AND INVISIBLE</h2>
-        <button onclick="toggleThought(this)" class="btn-unpack">UNPACK THOUGHT</button>
-        <div class="thought-content">
-          <p class="thought-text">
-            "For by Him all things were created... visible and invisible." (Col. 1:16)
-          </p>
-          <div class="actions">
-            <a href="https://ko-fi.com/s/60f8670000" target="_blank" class="btn btn-primary">
-              WANT THE ORIGINAL? ($50)
-            </a>
-          </div>
+        <p class="thought-primary">
+          "For by Him all things were created... visible and invisible." (Col. 1:16)
+        </p>
+        <div class="actions">
+          <a href="https://ko-fi.com/s/60f8670000" target="_blank" class="btn btn-primary">
+            GET HIGH-RES DIGITAL FILE ($50)
+          </a>
+          <span class="purchase-subtext">Instant high-resolution digital download</span>
+          <button onclick="copyPermalink('https://fotodumky.com/f/visible-and-invisible/', this)" class="btn-copy-link">COPY LINK</button>
         </div>
       </div>
     </article>
@@ -717,11 +742,25 @@
       const content = btn.nextElementSibling;
       if (content.style.display === "block") {
         content.style.display = "none";
-        btn.innerText = "UNPACK THOUGHT";
+        btn.innerText = "UNPACK REFLECTION";
       } else {
         content.style.display = "block";
-        btn.innerText = "CLOSE THOUGHT";
+        btn.innerText = "CLOSE REFLECTION";
       }
+    }
+
+    function copyPermalink(url, btn) {
+      navigator.clipboard.writeText(url).then(function() {
+        const originalText = btn.innerText;
+        btn.innerText = "LINK COPIED";
+        btn.style.borderColor = "#7bb384";
+        btn.style.color = "#7bb384";
+        setTimeout(function() {
+          btn.innerText = originalText;
+          btn.style.borderColor = "#333";
+          btn.style.color = "#888";
+        }, 2000);
+      });
     }
 
     function switchRoom(imgPath, btn) {

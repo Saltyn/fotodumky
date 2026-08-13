@@ -940,6 +940,9 @@
       <button onclick="openCryptoModal()" class="btn btn-secondary">
         Donate Crypto (USDT) ₿
       </button>
+      <button onclick="openUahModal()" class="btn btn-secondary">
+        Support in UAH ₴
+      </button>
     </div>
   </section>
 
@@ -963,6 +966,27 @@
       <div class="crypto-address" id="walletAddr">TCL6krQDK4rYhQkR8G6qU5WMBuTN7inxKf</div>
       <button onclick="copyAddress()" class="btn btn-primary" style="padding: 8px 16px; font-size: 0.85rem;">
         Copy Address 📋
+      </button>
+    </div>
+  </div>
+
+  <!-- UAH Modal -->
+  <div id="uahModal" class="modal">
+    <div class="modal-content">
+      <span class="close-btn" onclick="closeUahModal()">&times;</span>
+      <h3 style="margin-top:10px; font-weight:400;">Support in UAH</h3>
+      <p style="color:#888; font-size:0.85rem; margin-top:5px;">Card-to-card transfer, either bank works</p>
+
+      <p style="color:#7bb384; font-size:0.8rem; letter-spacing:1px; margin:15px 0 5px 0;">PRIVATBANK</p>
+      <div class="crypto-address" id="privatCard">4627055102600532</div>
+      <button onclick="copyCard('privatCard')" class="btn btn-primary" style="padding: 8px 16px; font-size: 0.85rem;">
+        Copy Number 📋
+      </button>
+
+      <p style="color:#7bb384; font-size:0.8rem; letter-spacing:1px; margin:20px 0 5px 0;">MONOBANK</p>
+      <div class="crypto-address" id="monoCard">4441111145887406</div>
+      <button onclick="copyCard('monoCard')" class="btn btn-primary" style="padding: 8px 16px; font-size: 0.85rem;">
+        Copy Number 📋
       </button>
     </div>
   </div>
@@ -996,10 +1020,25 @@
       navigator.clipboard.writeText(addr);
       alert('Address copied to clipboard!');
     }
+    function openUahModal() {
+      document.getElementById('uahModal').style.display = 'flex';
+    }
+    function closeUahModal() {
+      document.getElementById('uahModal').style.display = 'none';
+    }
+    function copyCard(elementId) {
+      const num = document.getElementById(elementId).innerText;
+      navigator.clipboard.writeText(num);
+      alert('Card number copied to clipboard!');
+    }
     window.onclick = function(event) {
-      const modal = document.getElementById('cryptoModal');
-      if (event.target == modal) {
-        modal.style.display = 'none';
+      const cryptoModal = document.getElementById('cryptoModal');
+      const uahModal = document.getElementById('uahModal');
+      if (event.target == cryptoModal) {
+        cryptoModal.style.display = 'none';
+      }
+      if (event.target == uahModal) {
+        uahModal.style.display = 'none';
       }
     }
   </script>

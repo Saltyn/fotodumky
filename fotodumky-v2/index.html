@@ -401,7 +401,7 @@
   <header>
     <h1>FotoDumky</h1>
     <p class="tagline">One frame. One thought.</p>
-    <p style="color: #7bb384; font-size: 0.7rem; letter-spacing: 1.5px; margin: 8px 0 0; text-transform: uppercase;">100% Real Photography &middot; AI-Free</p>
+    <p style="color: #7bb384; font-size: 0.7rem; letter-spacing: 1.5px; margin: 8px 0 0; text-transform: uppercase;">100% Real Photography &middot; Editing-Free &middot; AI-Free</p>
   </header>
 
   <main>
@@ -1167,9 +1167,38 @@
       document.getElementById('cryptoModal').style.display = 'none';
     }
     function copyAddress() {
-      const addr = document.getElementById('walletAddr').innerText;
-      navigator.clipboard.writeText(addr);
-      alert('Address copied to clipboard!');
+      const addr = document.getElementById('walletAddr').innerText.trim();
+      function showConfirm() {
+        alert('Address copied to clipboard!');
+      }
+      function fallbackCopy() {
+        const temp = document.createElement('textarea');
+        temp.value = addr;
+        temp.style.position = 'fixed';
+        temp.style.left = '-9999px';
+        temp.style.top = '0';
+        document.body.appendChild(temp);
+        temp.focus();
+        temp.select();
+        temp.setSelectionRange(0, addr.length);
+        let success = false;
+        try {
+          success = document.execCommand('copy');
+        } catch (err) {
+          success = false;
+        }
+        document.body.removeChild(temp);
+        if (success) {
+          showConfirm();
+        } else {
+          alert('Could not copy automatically. Address: ' + addr);
+        }
+      }
+      if (navigator.clipboard && navigator.clipboard.writeText && window.isSecureContext) {
+        navigator.clipboard.writeText(addr).then(showConfirm).catch(fallbackCopy);
+      } else {
+        fallbackCopy();
+      }
     }
     function openUahModal() {
       document.getElementById('uahModal').style.display = 'flex';
@@ -1178,9 +1207,38 @@
       document.getElementById('uahModal').style.display = 'none';
     }
     function copyCard(elementId) {
-      const num = document.getElementById(elementId).innerText;
-      navigator.clipboard.writeText(num);
-      alert('Card number copied to clipboard!');
+      const num = document.getElementById(elementId).innerText.trim();
+      function showConfirm() {
+        alert('Card number copied to clipboard!');
+      }
+      function fallbackCopy() {
+        const temp = document.createElement('textarea');
+        temp.value = num;
+        temp.style.position = 'fixed';
+        temp.style.left = '-9999px';
+        temp.style.top = '0';
+        document.body.appendChild(temp);
+        temp.focus();
+        temp.select();
+        temp.setSelectionRange(0, num.length);
+        let success = false;
+        try {
+          success = document.execCommand('copy');
+        } catch (err) {
+          success = false;
+        }
+        document.body.removeChild(temp);
+        if (success) {
+          showConfirm();
+        } else {
+          alert('Could not copy automatically. Card number: ' + num);
+        }
+      }
+      if (navigator.clipboard && navigator.clipboard.writeText && window.isSecureContext) {
+        navigator.clipboard.writeText(num).then(showConfirm).catch(fallbackCopy);
+      } else {
+        fallbackCopy();
+      }
     }
     window.onclick = function(event) {
       const cryptoModal = document.getElementById('cryptoModal');

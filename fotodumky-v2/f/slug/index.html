@@ -1,0 +1,1468 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FotoDumky - One frame. One thought.</title>
+  <meta name="description" content="100% Real Photography | AI-Free Zone. Optical capture of light, silence and human observation from Kyiv.">
+  <link rel="canonical" href="https://fotodumky.com/">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/x-icon" href="/favicon.ico?v=2">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png?v=2">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png?v=2">
+  <link rel="icon" type="image/png" sizes="48x48" href="/favicon-48x48.png?v=2">
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png?v=2">
+  <link rel="icon" type="image/png" sizes="192x192" href="/android-chrome-192x192.png?v=2">
+  <link rel="icon" type="image/png" sizes="512x512" href="/android-chrome-512x512.png?v=2">
+
+  <!-- GoatCounter Web Analytics -->
+  <script data-goatcounter="https://fotodumky.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
+
+  <!-- Open Graph / Facebook / LinkedIn -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://fotodumky.com/">
+  <meta property="og:title" content="FotoDumky - One frame. One thought.">
+  <meta property="og:description" content="100% Real Photography | AI-Free Zone. The photograph is the visual carrier & the thought is the fundamental content unit.">
+  <meta property="og:image" content="https://fotodumky.com/photos/IMG_4903.jpg">
+
+  <!-- Twitter -->
+  <meta property="twitter:card" content="summary_large_image">
+  <meta property="twitter:url" content="https://fotodumky.com/">
+  <meta property="twitter:title" content="FotoDumky - One frame. One thought.">
+  <meta property="twitter:description" content="100% Real Photography | AI-Free Zone. Observing light, quiet moments and perspective from Kyiv.">
+  <meta property="twitter:image" content="https://fotodumky.com/photos/IMG_4903.jpg">
+
+  <!-- Schema.org JSON-LD -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "ImageGallery",
+    "name": "FotoDumky",
+    "description": "100% Real Photography | AI-Free Zone",
+    "url": "https://fotodumky.com",
+    "creator": {
+      "@type": "Person",
+      "name": "Oleksandr"
+    }
+  }
+  </script>
+
+  <style>
+    body {
+      background-color: #0f0f0f;
+      color: #e0e0e0;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      margin: 0;
+      padding: 20px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    header {
+      text-align: center;
+      margin-bottom: 50px;
+      margin-top: 20px;
+    }
+    h1 { font-weight: 300; letter-spacing: 3px; margin-bottom: 5px; font-size: 2.5rem; }
+    p.tagline { color: #888; font-style: italic; margin-top: 0; font-size: 1.1rem; }
+    
+    .card {
+      max-width: 900px;
+      width: 100%;
+      background: #181818;
+      border-radius: 8px;
+      overflow: hidden;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+      margin-bottom: 60px;
+      border: 1px solid #222;
+      position: relative;
+    }
+    .card a.photo-link {
+      display: block;
+      text-decoration: none;
+      outline: none;
+    }
+    .card img {
+      width: 100%;
+      height: auto;
+      display: block;
+      -webkit-user-drag: auto;
+      user-select: auto;
+      -webkit-user-select: auto;
+    }
+    .card-body {
+      padding: 30px;
+      text-align: center;
+    }
+    .thought-title {
+      font-size: 1.4rem;
+      letter-spacing: 2px;
+      color: #7bb384;
+      margin-bottom: 15px;
+      text-transform: uppercase;
+    }
+    .thought-title a {
+      color: inherit;
+      text-decoration: none;
+      outline: none;
+    }
+
+    .thought-primary {
+      font-size: 1.1rem;
+      line-height: 1.6;
+      color: #ccc;
+      max-width: 700px;
+      margin: 0 auto 20px auto;
+    }
+
+    /* Interactive Expandable Content */
+    .btn-unpack {
+      background: transparent;
+      border: 1px solid #7bb384;
+      color: #7bb384;
+      padding: 8px 18px;
+      border-radius: 20px;
+      font-size: 0.85rem;
+      letter-spacing: 1px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      margin-bottom: 20px;
+    }
+    .btn-unpack:hover {
+      background: #7bb384;
+      color: #0f0f0f;
+    }
+    .thought-content {
+      display: none;
+      margin-top: 15px;
+      padding-top: 15px;
+      border-top: 1px solid #282828;
+    }
+    .thought-text-expanded {
+      font-size: 1.05rem;
+      line-height: 1.6;
+      color: #aaa;
+      max-width: 700px;
+      margin: 0 auto 20px auto;
+      text-align: left;
+    }
+    .actions {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 10px;
+      margin-top: 15px;
+    }
+    .btn {
+      padding: 12px 24px;
+      border-radius: 25px;
+      text-decoration: none;
+      font-weight: 500;
+      transition: all 0.2s ease;
+      font-size: 0.85rem;
+      letter-spacing: 0.5px;
+      cursor: pointer;
+      border: none;
+    }
+    .btn-primary {
+      background-color: #ffffff;
+      color: #000000;
+    }
+    .btn-primary:hover { background-color: #dddddd; }
+    .btn-secondary {
+      border: 1px solid #444;
+      color: #aaa;
+      background: transparent;
+    }
+    .btn-secondary:hover { border-color: #888; color: #fff; }
+
+    .btn-purchase {
+      display: inline-block;
+      background: transparent;
+      border: 1px solid #333;
+      color: #888;
+      padding: 8px 18px;
+      border-radius: 20px;
+      font-size: 0.85rem;
+      letter-spacing: 0.5px;
+      text-decoration: none;
+      transition: all 0.2s ease;
+    }
+    .btn-purchase:hover {
+      border-color: #555;
+      color: #ccc;
+    }
+
+    /* Sample Room Section */
+    .sample-room-section {
+      max-width: 900px;
+      width: 100%;
+      background: #141414;
+      border-radius: 8px;
+      padding: 40px;
+      box-sizing: border-box;
+      margin-top: 20px;
+      margin-bottom: 40px;
+      text-align: center;
+      border: 1px solid #222;
+    }
+    .sample-room-title {
+      font-size: 1.6rem;
+      letter-spacing: 2px;
+      color: #ffffff;
+      margin-bottom: 20px;
+      font-weight: 300;
+    }
+    .sample-room-img-wrapper {
+      position: relative;
+      width: 100%;
+      border-radius: 6px;
+      overflow: hidden;
+      margin-bottom: 15px;
+      border: 1px solid #333;
+    }
+    .sample-room-img-wrapper img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+    .room-switcher {
+      display: flex;
+      gap: 12px;
+      justify-content: center;
+      margin-top: 20px;
+      margin-bottom: 10px;
+      flex-wrap: wrap;
+    }
+    .btn-room {
+      opacity: 0.5;
+      transition: all 0.2s ease;
+    }
+    .btn-room.active-room {
+      opacity: 1;
+      border-color: #ffffff;
+      color: #ffffff;
+    }
+    .fine-print {
+      color: #666;
+      font-size: 0.75rem;
+      font-style: italic;
+      margin-top: 10px;
+      line-height: 1.4;
+    }
+
+    /* About Section */
+    .about-section {
+      max-width: 900px;
+      width: 100%;
+      background: #141414;
+      border-radius: 8px;
+      padding: 40px;
+      box-sizing: border-box;
+      margin-top: 20px;
+      margin-bottom: 30px;
+      display: flex;
+      gap: 30px;
+      align-items: center;
+      border-top: 2px solid #7bb384;
+    }
+    .about-img {
+      width: 220px;
+      height: 220px;
+      object-fit: cover;
+      border-radius: 50%;
+      flex-shrink: 0;
+      border: 2px solid #333;
+    }
+    .about-text {
+      color: #bbb;
+      line-height: 1.6;
+    }
+    .about-text h3 {
+      color: #fff;
+      margin-top: 0;
+      font-weight: 400;
+      letter-spacing: 1px;
+    }
+
+    /* Support Section (Bottom Global) */
+    .support-section {
+      max-width: 900px;
+      width: 100%;
+      background: #141414;
+      border-radius: 8px;
+      padding: 30px;
+      box-sizing: border-box;
+      margin-bottom: 40px;
+      text-align: center;
+      border: 1px solid #222;
+    }
+    .support-title {
+      font-size: 1.1rem;
+      letter-spacing: 1.5px;
+      color: #888;
+      margin-bottom: 20px;
+      text-transform: uppercase;
+    }
+    .support-actions {
+      display: flex;
+      gap: 15px;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    /* Footer & AI Free */
+    footer {
+      text-align: center;
+      padding: 30px 10px;
+      color: #666;
+      font-size: 0.85rem;
+      max-width: 700px;
+      border-top: 1px solid #222;
+      width: 100%;
+    }
+    .ai-free-badge {
+      display: inline-block;
+      color: #7bb384;
+      border: 1px solid #7bb384;
+      padding: 4px 12px;
+      border-radius: 12px;
+      font-size: 0.75rem;
+      letter-spacing: 1px;
+      margin-bottom: 15px;
+    }
+
+    /* Modal for Crypto */
+    .modal {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0,0,0,0.85);
+      justify-content: center;
+      align-items: center;
+      z-index: 1000;
+    }
+    .modal-content {
+      background: #181818;
+      padding: 30px;
+      border-radius: 12px;
+      max-width: 400px;
+      width: 90%;
+      text-align: center;
+      border: 1px solid #333;
+      position: relative;
+    }
+    .modal-content img {
+      width: 200px;
+      height: 200px;
+      margin: 15px 0;
+      border-radius: 8px;
+    }
+    .crypto-address {
+      background: #0f0f0f;
+      padding: 10px;
+      border-radius: 6px;
+      font-family: monospace;
+      font-size: 0.85rem;
+      word-break: break-all;
+      color: #7bb384;
+      margin: 15px 0;
+      border: 1px solid #222;
+    }
+    .close-btn {
+      position: absolute;
+      top: 10px;
+      right: 15px;
+      color: #aaa;
+      font-size: 1.5rem;
+      cursor: pointer;
+    }
+    .close-btn:hover { color: #fff; }
+
+    /* Responsive adjustment for Mobile */
+    @media (max-width: 600px) {
+      .about-section {
+        flex-direction: column;
+        text-align: center;
+      }
+      .about-img {
+        width: 160px;
+        height: 160px;
+      }
+    }
+    .overview-toggle {
+      display: inline-block;
+      margin-top: 14px;
+      padding: 6px 16px;
+      background: transparent;
+      border: 1px solid rgba(123, 179, 132, 0.4);
+      border-radius: 20px;
+      color: #7bb384;
+      font-size: 0.7rem;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      cursor: pointer;
+      transition: all 0.2s ease;
+    }
+    .overview-toggle:hover {
+      background: rgba(123, 179, 132, 0.1);
+      border-color: #7bb384;
+    }
+    .overview-grid {
+      max-width: 1100px;
+      width: 100%;
+      margin: 0 auto 40px auto;
+      padding: 0 20px;
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(155px, 1fr));
+      gap: 14px;
+      box-sizing: border-box;
+    }
+    .overview-tile {
+      display: block;
+      text-decoration: none;
+      color: #ccc;
+      border: 1px solid #222;
+      border-radius: 8px;
+      overflow: hidden;
+      background: #181818;
+      transition: border-color 0.2s ease, transform 0.2s ease;
+    }
+    .overview-tile:hover {
+      border-color: #7bb384;
+      transform: translateY(-2px);
+    }
+    .overview-tile-img-wrap {
+      width: 100%;
+      aspect-ratio: 1 / 1;
+      overflow: hidden;
+      background: #0f0f0f;
+    }
+    .overview-tile-img-wrap img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+    .overview-tile-title {
+      padding: 8px 10px;
+      font-size: 0.56rem;
+      letter-spacing: 0.3px;
+      text-transform: uppercase;
+      line-height: 1.3;
+      display: -webkit-box;
+      -webkit-line-clamp: 2;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+      text-align: center;
+    }
+    @media (max-width: 480px) {
+      .overview-grid {
+        grid-template-columns: repeat(auto-fill, minmax(115px, 1fr));
+        gap: 10px;
+        padding: 0 12px;
+      }
+      .overview-tile-title {
+        font-size: 0.5rem;
+        letter-spacing: 0.2px;
+        padding: 6px 6px;
+      }
+    }
+  </style>
+</head>
+<body id="top">
+
+  <header>
+    <h1>FotoDumky</h1>
+    <p class="tagline">One frame. One thought.</p>
+    <p style="color: #7bb384; font-size: 0.7rem; letter-spacing: 1.5px; margin: 8px 0 0; text-transform: uppercase;">31 frames &middot; 100% Real Photography &middot; Editing-Free &middot; AI-Free</p>
+    <button id="overviewToggleBtn" onclick="toggleOverview()" class="overview-toggle">OVERVIEW</button>
+  </header>
+
+  <div id="overviewGrid" class="overview-grid" style="display: none;"></div>
+
+  <main>
+    <!-- Catalog ID: FD-001 (PERMANENT FLAGSHIP #1) -->
+    <article class="card">
+      <a href="https://fotodumky.com/f/dont-rush-youre-still-green/" class="photo-link">
+        <picture><source type="image/webp" srcset="photos/web/IMG_4903.webp"><img src="photos/web/IMG_4903.jpg" alt="DON'T RUSH. YOU'RE STILL GREEN." loading="lazy"></picture>
+      </a>
+      <div class="card-body">
+        <h2 class="thought-title"><a href="https://fotodumky.com/f/dont-rush-youre-still-green/">DON'T RUSH. YOU'RE STILL GREEN.</a></h2>
+        <p class="thought-primary">
+          "Green" isn't a flaw - it means you are alive, unfolding and still growing.
+        </p>
+        <button onclick="toggleThought(this)" class="btn-unpack">UNPACK REFLECTION</button>
+        <div class="thought-content" style="display: none;">
+          <p class="thought-text-expanded">
+            On the surface, it sounds like a cheeky reminder. But look closer: "green" isn't a flaw - it means you are alive, unfolding and still growing. Immaturity is not a failure; it is the state of being alive. Don't demand instant maturity. Every stage has its own light, purpose and time.
+          </p>
+        </div>
+        <div class="actions">
+          <a href="https://ko-fi.com/s/4096f3477b" target="_blank" class="btn-purchase">
+            Instant high-resolution digital download ($25)
+          </a>
+        </div>
+      </div>
+    </article>
+<!-- Catalog ID: FD-013 (NO FLIGHT PLAN - PERMANENT FLAGSHIP #2) -->
+    <article class="card">
+      <a href="https://fotodumky.com/f/no-flight-plan/" class="photo-link">
+        <picture><source type="image/webp" srcset="photos/web/IMG_47242.webp"><img src="photos/web/IMG_47242.jpg" alt="NO FLIGHT PLAN" loading="lazy"></picture>
+      </a>
+      <div class="card-body">
+        <h2 class="thought-title"><a href="https://fotodumky.com/f/no-flight-plan/">NO FLIGHT PLAN</a></h2>
+        <p class="thought-primary">
+          Not every moment needs a destination. The best plan can be no plan at all.
+        </p>
+        <button onclick="toggleThought(this)" class="btn-unpack">UNPACK REFLECTION</button>
+        <div class="thought-content" style="display: none;">
+          <p class="thought-text-expanded">
+            Freedom begins when you release the need to know where you will land next. Some of the most meaningful discoveries happen entirely off-route.
+          </p>
+        </div>
+        <div class="actions">
+          <a href="https://ko-fi.com/s/b8efd6ca72" target="_blank" class="btn-purchase">
+            Instant high-resolution digital download ($15)
+          </a>
+        </div>
+      </div>
+    </article>
+<!-- Catalog ID: FD-017 (PERMANENT FLAGSHIP #3) -->
+    <article class="card">
+      <a href="https://fotodumky.com/f/the-hardware-changed-the-code-didnt/" class="photo-link">
+        <picture><source type="image/webp" srcset="photos/web/IMG_42940.webp"><img src="photos/web/IMG_42940.jpg" alt="THE HARDWARE CHANGED. THE CODE DIDN'T." loading="lazy"></picture>
+      </a>
+      <div class="card-body">
+        <h2 class="thought-title"><a href="https://fotodumky.com/f/the-hardware-changed-the-code-didnt/">THE HARDWARE CHANGED. THE CODE DIDN'T.</a></h2>
+        <p class="thought-primary">
+          Bodies evolve, species change and forms disappear. Yet the fundamental instructions persist - survive, adapt, continue.
+        </p>
+        <button onclick="toggleThought(this)" class="btn-unpack">UNPACK REFLECTION</button>
+        <div class="thought-content" style="display: none;">
+          <p class="thought-text-expanded">
+            We spend so much time studying the physical vessel, mistaking temporary hardware for the thing itself. A damselfly rests on a dry branch, carrying an ancient biological logic shaped long before anything we would recognize as its present form existed. The hardware changes. The execution continues.
+          </p>
+        </div>
+        <div class="actions">
+          <a href="https://ko-fi.com/s/e792bc9394" target="_blank" class="btn-purchase">
+            Instant high-resolution digital download ($5)
+          </a>
+        </div>
+      </div>
+    </article>
+<!-- Catalog ID: FD-025 (PERMANENT FLAGSHIP #4) -->
+    <article class="card">
+      <a href="https://fotodumky.com/f/attention-is-a-choice/" class="photo-link">
+        <picture><source type="image/webp" srcset="photos/web/IMG_9247.webp"><img src="photos/web/IMG_9247.jpg" alt="ATTENTION IS A CHOICE" loading="lazy"></picture>
+      </a>
+      <div class="card-body">
+        <h2 class="thought-title"><a href="https://fotodumky.com/f/attention-is-a-choice/">ATTENTION IS A CHOICE</a></h2>
+        <p class="thought-primary">
+          Everything is blurred until something decides to matter.
+        </p>
+        <button onclick="toggleThought(this)" class="btn-unpack">UNPACK REFLECTION</button>
+        <div class="thought-content" style="display: none;">
+          <p class="thought-text-expanded">
+            The hoverfly did not ask to be seen. It landed where it needed to be, and the whole field fell out of focus behind it. Clarity was never given. It was aimed.
+          </p>
+        </div>
+        <div class="actions">
+          <a href="https://ko-fi.com/s/859db37f11" target="_blank" class="btn-purchase">
+            Instant high-resolution digital download ($5)
+          </a>
+        </div>
+      </div>
+    </article>
+<!-- Catalog ID: FD-002 (PERMANENT FLAGSHIP #5) -->
+    <article class="card">
+      <a href="https://fotodumky.com/f/peace-doesnt-come-you-notice-it/" class="photo-link">
+        <picture><source type="image/webp" srcset="photos/web/IMG_4248_READY.webp"><img src="photos/web/IMG_4248_READY.jpg" alt="PEACE DOESN'T COME. YOU NOTICE IT" loading="lazy"></picture>
+      </a>
+      <div class="card-body">
+        <h2 class="thought-title"><a href="https://fotodumky.com/f/peace-doesnt-come-you-notice-it/">PEACE DOESN'T COME. YOU NOTICE IT</a></h2>
+        <p class="thought-primary">
+          Peace doesn't arrive from the outside, nor is it waiting in the future. It is already here - you simply have to stop and notice the light breaking through the dark.
+        </p>
+        <button onclick="toggleThought(this)" class="btn-unpack">UNPACK REFLECTION</button>
+        <div class="thought-content" style="display: none;">
+          <p class="thought-text-expanded">
+            Peace is not something you chase down or build with effort. It lives quietly beneath the noise of everyday life, waiting to be seen. The moment you pause and observe, you realize it was never missing.
+          </p>
+        </div>
+        <div class="actions">
+          <a href="https://ko-fi.com/s/1b818d1d4f" target="_blank" class="btn-purchase">
+            Instant high-resolution digital download ($25)
+          </a>
+        </div>
+      </div>
+    </article>
+<!-- Catalog ID: FD-007 (PERMANENT FLAGSHIP #6) -->
+    <article class="card">
+      <a href="https://fotodumky.com/f/to-preserve-life-is-to-risk-losing-it/" class="photo-link">
+        <picture><source type="image/webp" srcset="photos/web/IMG_7777.webp"><img src="photos/web/IMG_7777.jpg" alt="TO PRESERVE LIFE IS TO RISK LOSING IT" loading="lazy"></picture>
+      </a>
+      <div class="card-body">
+        <h2 class="thought-title"><a href="https://fotodumky.com/f/to-preserve-life-is-to-risk-losing-it/">TO PRESERVE LIFE IS TO RISK LOSING IT</a></h2>
+        <p class="thought-primary">
+          We can spend so much time avoiding danger that we accidentally avoid living.
+        </p>
+        <button onclick="toggleThought(this)" class="btn-unpack">UNPACK REFLECTION</button>
+        <div class="thought-content" style="display: none;">
+          <p class="thought-text-expanded">
+            Safety taken to an absolute extreme becomes a sterile container. Life demands exposure to the elements to stay vital and open.
+          </p>
+        </div>
+        <div class="actions">
+          <a href="https://ko-fi.com/s/64e9047f77" target="_blank" class="btn-purchase">
+            Instant high-resolution digital download ($5)
+          </a>
+        </div>
+      </div>
+    </article>
+<!-- Catalog ID: FD-027 (PERMANENT FLAGSHIP #7) -->
+    <article class="card">
+      <a href="https://fotodumky.com/f/the-noise-you-never-chose/" class="photo-link">
+        <picture><source type="image/webp" srcset="photos/web/IMG_086300.webp"><img src="photos/web/IMG_086300.jpg" alt="THE NOISE YOU NEVER CHOSE" loading="lazy"></picture>
+      </a>
+      <div class="card-body">
+        <h2 class="thought-title"><a href="https://fotodumky.com/f/the-noise-you-never-chose/">THE NOISE YOU NEVER CHOSE</a></h2>
+        <p class="thought-primary">
+          The flower is quiet. The world behind it is not.
+        </p>
+        <button onclick="toggleThought(this)" class="btn-unpack">UNPACK REFLECTION</button>
+        <div class="thought-content" style="display: none;">
+          <p class="thought-text-expanded">
+            We rarely notice how much energy we spend processing what we never chose to notice. Sometimes peace begins with letting the background remain blurred.
+          </p>
+        </div>
+        <div class="actions">
+          <a href="https://ko-fi.com/s/7f38a6d2c4" target="_blank" class="btn-purchase">
+            Instant high-resolution digital download ($5)
+          </a>
+        </div>
+      </div>
+    </article>
+<!-- Catalog ID: FD-020 (PERMANENT FLAGSHIP #8) -->
+    <article class="card">
+      <a href="https://fotodumky.com/f/dare-to-stand-out/" class="photo-link">
+        <picture><source type="image/webp" srcset="photos/web/IMG_46830.webp"><img src="photos/web/IMG_46830.jpg" alt="DARE TO STAND OUT" loading="lazy"></picture>
+      </a>
+      <div class="card-body">
+        <h2 class="thought-title"><a href="https://fotodumky.com/f/dare-to-stand-out/">DARE TO STAND OUT</a></h2>
+        <p class="thought-primary">
+          Be the color, not the background.
+        </p>
+        <button onclick="toggleThought(this)" class="btn-unpack">UNPACK REFLECTION</button>
+        <div class="thought-content" style="display: none;">
+          <p class="thought-text-expanded">
+            Think of walking into a room where everyone is dressed in safe, muted shades of corporate gray because it is &ldquo;appropriate.&rdquo; Choosing to wear a bright, expressive jacket isn't just about fashion - it is a living statement that you refuse to let your individuality be muted by the expectations of the crowd.
+          </p>
+        </div>
+        <div class="actions">
+          <a href="https://ko-fi.com/s/65123ecd34" target="_blank" class="btn-purchase">
+            Instant high-resolution digital download ($5)
+          </a>
+        </div>
+      </div>
+    </article>
+<!-- Catalog ID: FD-008 -->
+    <article class="card">
+      <a href="https://fotodumky.com/f/she-has-a-purpose-we-have-therapy/" class="photo-link">
+        <picture><source type="image/webp" srcset="photos/web/IMG_88880.webp"><img src="photos/web/IMG_88880.jpg" alt="SHE HAS A PURPOSE. WE HAVE THERAPY." loading="lazy"></picture>
+      </a>
+      <div class="card-body">
+        <h2 class="thought-title"><a href="https://fotodumky.com/f/she-has-a-purpose-we-have-therapy/">SHE HAS A PURPOSE. WE HAVE THERAPY.</a></h2>
+        <p class="thought-primary">
+          A bee never asks what life is for. It simply knows. We invented philosophy to ask the question - and therapy to cope with the answer.
+        </p>
+        <button onclick="toggleThought(this)" class="btn-unpack">UNPACK REFLECTION</button>
+        <div class="thought-content" style="display: none;">
+          <p class="thought-text-expanded">
+            In instinct there is absolute clarity; in intellect there is constant negotiation. Perhaps wisdom is finding your way back to doing without endless questioning.
+          </p>
+        </div>
+        <div class="actions">
+          <a href="https://ko-fi.com/s/a9af9f073e" target="_blank" class="btn-purchase">
+            Instant high-resolution digital download ($25)
+          </a>
+        </div>
+      </div>
+    </article>
+<!-- Catalog ID: FD-023 (WHAT RUSTS DOES NOT DECIDE WHAT BLOOMS) -->
+    <article class="card">
+      <a href="https://fotodumky.com/f/what-rusts-does-not-decide-what-blooms/" class="photo-link">
+        <picture><source type="image/webp" srcset="photos/web/IMG_93292.webp"><img src="photos/web/IMG_93292.jpg" alt="WHAT RUSTS DOES NOT DECIDE WHAT BLOOMS" loading="lazy"></picture>
+      </a>
+      <div class="card-body">
+        <h2 class="thought-title"><a href="https://fotodumky.com/f/what-rusts-does-not-decide-what-blooms/">WHAT RUSTS DOES NOT DECIDE WHAT BLOOMS</a></h2>
+        <p class="thought-primary">
+          The frame around it has weathered with time. The rose does not know, or does not care.
+        </p>
+        <button onclick="toggleThought(this)" class="btn-unpack">UNPACK REFLECTION</button>
+        <div class="thought-content" style="display: none;">
+          <p class="thought-text-expanded">
+            Old iron still holds the garden together, while new life keeps unfolding beside it. One bloom opens in full color. What surrounds life does not decide what life becomes.
+          </p>
+        </div>
+        <div class="actions">
+          <a href="https://ko-fi.com/s/d446410982" target="_blank" class="btn-purchase">
+            Instant high-resolution digital download ($5)
+          </a>
+        </div>
+      </div>
+    </article>
+<!-- Catalog ID: FD-016 -->
+    <article class="card">
+      <a href="https://fotodumky.com/f/everyone-is-flying-somewhere/" class="photo-link">
+        <picture><source type="image/webp" srcset="photos/web/IMG_39600.webp"><img src="photos/web/IMG_39600.jpg" alt="EVERYONE IS FLYING SOMEWHERE" loading="lazy"></picture>
+      </a>
+      <div class="card-body">
+        <h2 class="thought-title"><a href="https://fotodumky.com/f/everyone-is-flying-somewhere/">EVERYONE IS FLYING SOMEWHERE</a></h2>
+        <p class="thought-primary">
+          Some rush toward a destination. Some simply follow what calls them. And some never need to explain where they fly.
+        </p>
+        <button onclick="toggleThought(this)" class="btn-unpack">UNPACK REFLECTION</button>
+        <div class="thought-content" style="display: none;">
+          <p class="thought-text-expanded">
+            We watch the world rush by, every heart navigating its own quiet trajectory. Some fly by a plan, some by instinct, and some simply land where light and stillness meet.
+          </p>
+        </div>
+        <div class="actions">
+          <a href="https://ko-fi.com/s/d37f9b9fb0" target="_blank" class="btn-purchase">
+            Instant high-resolution digital download ($5)
+          </a>
+        </div>
+      </div>
+    </article>
+<!-- Catalog ID: FD-011 -->
+    <article class="card">
+      <a href="https://fotodumky.com/f/efficiency-can-be-beautiful/" class="photo-link">
+        <picture><source type="image/webp" srcset="photos/web/IMG_4678.webp"><img src="photos/web/IMG_4678.jpg" alt="EFFICIENCY CAN BE BEAUTIFUL" loading="lazy"></picture>
+      </a>
+      <div class="card-body">
+        <h2 class="thought-title"><a href="https://fotodumky.com/f/efficiency-can-be-beautiful/">EFFICIENCY CAN BE BEAUTIFUL</a></h2>
+        <p class="thought-primary">
+          We think of beauty as something added for pleasure. Nature often works in reverse - stripping away everything unnecessary until function becomes beautiful.
+        </p>
+        <button onclick="toggleThought(this)" class="btn-unpack">UNPACK REFLECTION</button>
+        <div class="thought-content" style="display: none;">
+          <p class="thought-text-expanded">
+            True elegance is not ornament; it is purpose refined to its absolute purest line. When nothing redundant remains, utility turns into art.
+          </p>
+        </div>
+        <div class="actions">
+          <a href="https://ko-fi.com/s/89aad4d03c" target="_blank" class="btn-purchase">
+            Instant high-resolution digital download ($5)
+          </a>
+        </div>
+      </div>
+    </article>
+<!-- Catalog ID: FD-014 -->
+    <article class="card">
+      <a href="https://fotodumky.com/f/influence-has-no-size/" class="photo-link">
+        <picture><source type="image/webp" srcset="photos/web/IMG_44330.webp"><img src="photos/web/IMG_44330.jpg" alt="INFLUENCE HAS NO SIZE" loading="lazy"></picture>
+      </a>
+      <div class="card-body">
+        <h2 class="thought-title"><a href="https://fotodumky.com/f/influence-has-no-size/">INFLUENCE HAS NO SIZE</a></h2>
+        <p class="thought-primary">
+          Size is visible. Influence is not. Visibility belongs to scale, but power belongs to presence. A small presence can redraw the boundaries of an entire field.
+        </p>
+        <button onclick="toggleThought(this)" class="btn-unpack">UNPACK REFLECTION</button>
+        <div class="thought-content" style="display: none;">
+          <p class="thought-text-expanded">
+            Never confuse physical volume with real impact. A quiet, precise center can hold sway over vast open surroundings without making a sound.
+          </p>
+        </div>
+        <div class="actions">
+          <a href="https://ko-fi.com/s/c42920d8fc" target="_blank" class="btn-purchase">
+            Instant high-resolution digital download ($15)
+          </a>
+        </div>
+      </div>
+    </article>
+<!-- Catalog ID: FD-015 -->
+    <article class="card">
+      <a href="https://fotodumky.com/f/abundance-is-not-a-count/" class="photo-link">
+        <picture><source type="image/webp" srcset="photos/web/IMG_41850.webp"><img src="photos/web/IMG_41850.jpg" alt="ABUNDANCE IS NOT A COUNT" loading="lazy"></picture>
+      </a>
+      <div class="card-body">
+        <h2 class="thought-title"><a href="https://fotodumky.com/f/abundance-is-not-a-count/">ABUNDANCE IS NOT A COUNT</a></h2>
+        <p class="thought-primary">
+          We are trained to count what we have. Abundance begins when we notice what cannot be counted.
+        </p>
+        <button onclick="toggleThought(this)" class="btn-unpack">UNPACK REFLECTION</button>
+        <div class="thought-content" style="display: none;">
+          <p class="thought-text-expanded">
+            Wealth measured strictly in numbers is finite and anxious. Real wealth is the quiet awareness of depth, light, and presence right where you stand.
+          </p>
+        </div>
+        <div class="actions">
+          <a href="https://ko-fi.com/s/93322881dd" target="_blank" class="btn-purchase">
+            Instant high-resolution digital download ($15)
+          </a>
+        </div>
+      </div>
+    </article>
+<!-- Catalog ID: FD-003 -->
+    <article class="card">
+      <a href="https://fotodumky.com/f/everything-beautiful-has-its-time/" class="photo-link">
+        <picture><source type="image/webp" srcset="photos/web/IMG_4833_READY.webp"><img src="photos/web/IMG_4833_READY.jpg" alt="EVERYTHING BEAUTIFUL HAS ITS TIME" loading="lazy"></picture>
+      </a>
+      <div class="card-body">
+        <h2 class="thought-title"><a href="https://fotodumky.com/f/everything-beautiful-has-its-time/">EVERYTHING BEAUTIFUL HAS ITS TIME</a></h2>
+        <p class="thought-primary">
+          Everything beautiful has its season. Maybe beauty isn't meant to last - only to be noticed while it's here.
+        </p>
+        <button onclick="toggleThought(this)" class="btn-unpack">UNPACK REFLECTION</button>
+        <div class="thought-content" style="display: none;">
+          <p class="thought-text-expanded">
+            Impermanence is not a tragedy; it is what gives a moment its sharp, vivid weight. What lasts forever risks being taken for granted.
+          </p>
+        </div>
+        <div class="actions">
+          <a href="https://ko-fi.com/s/bb68418949" target="_blank" class="btn-purchase">
+            Instant high-resolution digital download ($5)
+          </a>
+        </div>
+      </div>
+    </article>
+<!-- Catalog ID: FD-004 -->
+    <article class="card">
+      <a href="https://fotodumky.com/f/talent-graduates-every-day/" class="photo-link">
+        <picture><source type="image/webp" srcset="photos/web/IMG_4371.webp"><img src="photos/web/IMG_4371.jpg" alt="TALENT GRADUATES EVERY DAY" loading="lazy"></picture>
+      </a>
+      <div class="card-body">
+        <h2 class="thought-title"><a href="https://fotodumky.com/f/talent-graduates-every-day/">TALENT GRADUATES EVERY DAY</a></h2>
+        <p class="thought-primary">
+          Nature doesn't issue diplomas. Masterpieces are engineered in silence, thread by thread, every single morning.
+        </p>
+        <button onclick="toggleThought(this)" class="btn-unpack">UNPACK REFLECTION</button>
+        <div class="thought-content" style="display: none;">
+          <p class="thought-text-expanded">
+            Mastery isn't an event or a certificate on a wall. It is the steady, unheralded daily practice of turning attention into creation.
+          </p>
+        </div>
+        <div class="actions">
+          <a href="https://ko-fi.com/s/b3b084f426" target="_blank" class="btn-purchase">
+            Instant high-resolution digital download ($5)
+          </a>
+        </div>
+      </div>
+    </article>
+<!-- Catalog ID: FD-006 -->
+    <article class="card">
+      <a href="https://fotodumky.com/f/beauty-doesnt-chase-it-attracts/" class="photo-link">
+        <picture><source type="image/webp" srcset="photos/web/IMG_45762.webp"><img src="photos/web/IMG_45762.jpg" alt="BEAUTY DOESN'T CHASE. IT ATTRACTS." loading="lazy"></picture>
+      </a>
+      <div class="card-body">
+        <h2 class="thought-title"><a href="https://fotodumky.com/f/beauty-doesnt-chase-it-attracts/">BEAUTY DOESN'T CHASE. IT ATTRACTS.</a></h2>
+        <p class="thought-primary">
+          Beauty doesn't chase attention. It simply blooms - and somehow, the right eyes always find it.
+        </p>
+        <button onclick="toggleThought(this)" class="btn-unpack">UNPACK REFLECTION</button>
+        <div class="thought-content" style="display: none;">
+          <p class="thought-text-expanded">
+            Effortless pull is far stronger than loud insistence. When something is authentically complete in itself, it draws observation naturally.
+          </p>
+        </div>
+        <div class="actions">
+          <a href="https://ko-fi.com/s/3186cb8f38" target="_blank" class="btn-purchase">
+            Instant high-resolution digital download ($5)
+          </a>
+        </div>
+      </div>
+    </article>
+<!-- Catalog ID: FD-010 -->
+    <article class="card">
+      <a href="https://fotodumky.com/f/every-leaf-is-counted/" class="photo-link">
+        <picture><source type="image/webp" srcset="photos/web/IMG_42030.webp"><img src="photos/web/IMG_42030.jpg" alt="EVERY LEAF IS COUNTED" loading="lazy"></picture>
+      </a>
+      <div class="card-body">
+        <h2 class="thought-title"><a href="https://fotodumky.com/f/every-leaf-is-counted/">EVERY LEAF IS COUNTED</a></h2>
+        <p class="thought-primary">
+          Every leaf is counted. So is every quiet moment we thought went unnoticed.
+        </p>
+        <button onclick="toggleThought(this)" class="btn-unpack">UNPACK REFLECTION</button>
+        <div class="thought-content" style="display: none;">
+          <p class="thought-text-expanded">
+            Nothing in nature is discarded or forgotten. The subtle shifts, the quiet observations. They all build the landscape of who we are.
+          </p>
+        </div>
+        <div class="actions">
+          <a href="https://ko-fi.com/s/48b592209d" target="_blank" class="btn-purchase">
+            Instant high-resolution digital download ($5)
+          </a>
+        </div>
+      </div>
+    </article>
+<!-- Catalog ID: FD-018 (HAPPINESS IS GROWING OLD TOGETHER) -->
+    <article class="card">
+      <a href="https://fotodumky.com/f/happiness-is-growing-old-together/" class="photo-link">
+        <picture><source type="image/webp" srcset="photos/web/IMG_397700.webp"><img src="photos/web/IMG_397700.jpg" alt="HAPPINESS IS GROWING OLD TOGETHER" loading="lazy"></picture>
+      </a>
+      <div class="card-body">
+        <h2 class="thought-title"><a href="https://fotodumky.com/f/happiness-is-growing-old-together/">HAPPINESS IS GROWING OLD TOGETHER</a></h2>
+        <p class="thought-primary">
+          The internet is full of shiny colors and perfect moments. But life isn't always like that. Happiness is still being there when the petals fall - side by side through every season.
+        </p>
+        <button onclick="toggleThought(this)" class="btn-unpack">UNPACK REFLECTION</button>
+        <div class="thought-content" style="display: none;">
+          <p class="thought-text-expanded">
+            Growing old together is not about preserving the way things were. It is about remaining beside each other as everything changes - slowly, visibly, inevitably.
+          </p>
+        </div>
+        <div class="actions">
+          <a href="https://ko-fi.com/s/41df0e2579" target="_blank" class="btn-purchase">
+            Instant high-resolution digital download ($5)
+          </a>
+        </div>
+      </div>
+    </article>
+<!-- Catalog ID: FD-019 (THE FALL THAT LIFTED US) -->
+    <article class="card">
+      <a href="https://fotodumky.com/f/fall-that-lifted-us/" class="photo-link">
+        <picture><source type="image/webp" srcset="photos/web/IMG_500620.webp"><img src="photos/web/IMG_500620.jpg" alt="THE FALL THAT LIFTED US" loading="lazy"></picture>
+      </a>
+      <div class="card-body">
+        <h2 class="thought-title"><a href="https://fotodumky.com/f/fall-that-lifted-us/">THE FALL THAT LIFTED US</a></h2>
+        <p class="thought-primary">
+          One apple fell to the ground. The question it raised reached the stars. Gravity was always there - we just needed an apple to notice.
+        </p>
+        <button onclick="toggleThought(this)" class="btn-unpack">UNPACK REFLECTION</button>
+        <div class="thought-content" style="display: none;">
+          <p class="thought-text-expanded">
+            We look for wisdom in the clouds, yet the universe reveals its deepest secrets downward. It's not about how high you climb, but what you notice when everything finally lands.
+          </p>
+        </div>
+        <div class="actions">
+          <a href="https://ko-fi.com/s/1574470816" target="_blank" class="btn-purchase">
+            Instant high-resolution digital download ($5)
+          </a>
+        </div>
+      </div>
+    </article>
+<!-- Catalog ID: FD-021 (BRING YOUR OWN WARMTH) -->
+    <article class="card">
+      <a href="https://fotodumky.com/f/bring-your-own-warmth/" class="photo-link">
+        <picture><source type="image/webp" srcset="photos/web/IMG_20230.webp"><img src="photos/web/IMG_20230.jpg" alt="BRING YOUR OWN WARMTH" loading="lazy"></picture>
+      </a>
+      <div class="card-body">
+        <h2 class="thought-title"><a href="https://fotodumky.com/f/bring-your-own-warmth/">BRING YOUR OWN WARMTH</a></h2>
+        <p class="thought-primary">
+          Warmth isn't found. It's made.
+        </p>
+        <button onclick="toggleThought(this)" class="btn-unpack">UNPACK REFLECTION</button>
+        <div class="thought-content" style="display: none;">
+          <p class="thought-text-expanded">
+            Rising from cool green shadow, the rose carries its own fire. It never asked for the light. It simply brought its own.
+          </p>
+        </div>
+        <div class="actions">
+          <a href="https://ko-fi.com/s/dc8e510db1" target="_blank" class="btn-purchase">
+            Instant high-resolution digital download ($5)
+          </a>
+        </div>
+      </div>
+    </article>
+<!-- Catalog ID: FD-022 (WE ARE ALL VISITORS) -->
+    <article class="card">
+      <a href="https://fotodumky.com/f/we-are-all-visitors/" class="photo-link">
+        <picture><source type="image/webp" srcset="photos/web/IMG_40220.webp"><img src="photos/web/IMG_40220.jpg" alt="WE ARE ALL VISITORS" loading="lazy"></picture>
+      </a>
+      <div class="card-body">
+        <h2 class="thought-title"><a href="https://fotodumky.com/f/we-are-all-visitors/">WE ARE ALL VISITORS</a></h2>
+        <p class="thought-primary">
+          We arrive. We inhabit a space. We move on.
+        </p>
+        <button onclick="toggleThought(this)" class="btn-unpack">UNPACK REFLECTION</button>
+        <div class="thought-content" style="display: none;">
+          <p class="thought-text-expanded">
+            A rose is not real estate. It is a rest stop. The katydid grips the petal for one bright moment, asking nothing more than the view. We spend so much effort trying to own our moments, forgetting we were only ever passing through.
+          </p>
+        </div>
+        <div class="actions">
+          <a href="https://ko-fi.com/s/cdc1193ac9" target="_blank" class="btn-purchase">
+            Instant high-resolution digital download ($5)
+          </a>
+        </div>
+      </div>
+    </article>
+<!-- Catalog ID: FD-012 -->
+    <article class="card">
+      <a href="https://fotodumky.com/f/perfect-engineering/" class="photo-link">
+        <picture><source type="image/webp" srcset="photos/web/IMG_46700.webp"><img src="photos/web/IMG_46700.jpg" alt="PERFECT ENGINEERING" loading="lazy"></picture>
+      </a>
+      <div class="card-body">
+        <h2 class="thought-title"><a href="https://fotodumky.com/f/perfect-engineering/">PERFECT ENGINEERING</a></h2>
+        <p class="thought-primary">
+          Flawless aerodynamics. Nothing unnecessary. Nothing accidental. No roar of an engine, no turbulence and no stress on the frame. Every detail earns its place.
+        </p>
+        <button onclick="toggleThought(this)" class="btn-unpack">UNPACK REFLECTION</button>
+        <div class="thought-content" style="display: none;">
+          <p class="thought-text-expanded">
+            Human engineering spends billions striving for silence and fluid movement. Nature mastered both without generating a single line of blueprint.
+          </p>
+        </div>
+        <div class="actions">
+          <a href="https://ko-fi.com/s/8a37c57f98" target="_blank" class="btn-purchase">
+            Instant high-resolution digital download ($5)
+          </a>
+        </div>
+      </div>
+    </article>
+<!-- Catalog ID: FD-024 (WE ARE ALWAYS LATE) -->
+    <article class="card">
+      <a href="https://fotodumky.com/f/we-are-always-late/" class="photo-link">
+        <picture><source type="image/webp" srcset="photos/web/IMG_932300.webp"><img src="photos/web/IMG_932300.jpg" alt="WE ARE ALWAYS LATE" loading="lazy"></picture>
+      </a>
+      <div class="card-body">
+        <h2 class="thought-title"><a href="https://fotodumky.com/f/we-are-always-late/">WE ARE ALWAYS LATE</a></h2>
+        <p class="thought-primary">
+          Life was already moving long before we arrived to observe it.
+        </p>
+        <button onclick="toggleThought(this)" class="btn-unpack">UNPACK REFLECTION</button>
+        <div class="thought-content" style="display: none;">
+          <p class="thought-text-expanded">
+            The bud is still closed. The rose is already open. The flowers behind it are already fading from view. We step into the frame and call this instant &ldquo;now,&rdquo; as if the world had been waiting for us to notice.<br><br>It never was.
+          </p>
+        </div>
+        <div class="actions">
+          <a href="https://ko-fi.com/s/bf0a268027" target="_blank" class="btn-purchase">
+            Instant high-resolution digital download ($5)
+          </a>
+        </div>
+      </div>
+    </article>
+<!-- Catalog ID: FD-026 (WISER BY ONE DAWN) -->
+    <article class="card">
+      <a href="https://fotodumky.com/f/wiser-by-one-dawn/" class="photo-link">
+        <picture><source type="image/webp" srcset="photos/web/IMG_42000.webp"><img src="photos/web/IMG_42000.jpg" alt="WISER BY ONE DAWN" loading="lazy"></picture>
+      </a>
+      <div class="card-body">
+        <h2 class="thought-title"><a href="https://fotodumky.com/f/wiser-by-one-dawn/">WISER BY ONE DAWN</a></h2>
+        <p class="thought-primary">
+          You don't need another lifetime to become wiser. Sometimes one night is enough.
+        </p>
+        <button onclick="toggleThought(this)" class="btn-unpack">UNPACK REFLECTION</button>
+        <div class="thought-content" style="display: none;">
+          <p class="thought-text-expanded">
+            The stems stand where they stood yesterday, but the morning has left something behind. A little water. A little light. A different understanding of what it means to be here.<br><br>We don't always grow through what happens to us. Sometimes we simply wake up and see the same world differently.
+          </p>
+        </div>
+        <div class="actions">
+          <a href="https://ko-fi.com/s/a3c89e8c63" target="_blank" class="btn-purchase">
+            Instant high-resolution digital download ($5)
+          </a>
+        </div>
+      </div>
+    </article>
+<!-- Catalog ID: FD-028 (SOMETHING ALWAYS LANDS) -->
+    <article class="card">
+      <a href="https://fotodumky.com/f/something-always-lands/" class="photo-link">
+        <picture><source type="image/webp" srcset="photos/web/IMG_088200.webp"><img src="photos/web/IMG_088200.jpg" alt="SOMETHING ALWAYS LANDS" loading="lazy"></picture>
+      </a>
+      <div class="card-body">
+        <h2 class="thought-title"><a href="https://fotodumky.com/f/something-always-lands/">SOMETHING ALWAYS LANDS</a></h2>
+        <p class="thought-primary">
+          You can prepare the moment, wait for stillness, guard your peace - and still, something unexpected will arrive.
+        </p>
+        <button onclick="toggleThought(this)" class="btn-unpack">UNPACK REFLECTION</button>
+        <div class="thought-content" style="display: none;">
+          <p class="thought-text-expanded">
+            It may not interrupt the moment. It may be what makes it one.
+          </p>
+        </div>
+        <div class="actions">
+          <a href="https://ko-fi.com/s/dc82bf1988" target="_blank" class="btn-purchase">
+            Instant high-resolution digital download ($5)
+          </a>
+        </div>
+      </div>
+    </article>
+<!-- Catalog ID: FD-029 (NOTHING TO PROVE) -->
+    <article class="card">
+      <a href="https://fotodumky.com/f/nothing-to-prove/" class="photo-link">
+        <picture><source type="image/webp" srcset="photos/web/IMG_523000.webp"><img src="photos/web/IMG_523000.jpg" alt="NOTHING TO PROVE" loading="lazy"></picture>
+      </a>
+      <div class="card-body">
+        <h2 class="thought-title"><a href="https://fotodumky.com/f/nothing-to-prove/">NOTHING TO PROVE</a></h2>
+        <p class="thought-primary">
+          The leaf does not compete for attention. It does not need witnesses. It does not need permission from a tree.
+        </p>
+        <button onclick="toggleThought(this)" class="btn-unpack">UNPACK REFLECTION</button>
+        <div class="thought-content" style="display: none;">
+          <p class="thought-text-expanded">
+            The leaf simply turns gold, quietly becoming what it was always going to become. Perhaps real maturity looks less like making an entrance and more like having nothing left to prove.
+          </p>
+        </div>
+        <div class="actions">
+          <a href="https://ko-fi.com/s/1163b7c8f2" target="_blank" class="btn-purchase">
+            Instant high-resolution digital download ($5)
+          </a>
+        </div>
+      </div>
+    </article>
+<!-- Catalog ID: FD-031 (THE CENTER IS OCCUPIED) -->
+    <article class="card">
+      <a href="https://fotodumky.com/f/the-center-is-occupied/" class="photo-link">
+        <picture><source type="image/webp" srcset="photos/web/IMG_98550.webp"><img src="photos/web/IMG_98550.jpg" alt="THE CENTER IS OCCUPIED" loading="lazy"></picture>
+      </a>
+      <div class="card-body">
+        <h2 class="thought-title"><a href="https://fotodumky.com/f/the-center-is-occupied/">THE CENTER IS OCCUPIED</a></h2>
+        <p class="thought-primary">
+          Being at the center of the frame doesn't mean you are the reason everyone came.
+        </p>
+        <button onclick="toggleThought(this)" class="btn-unpack">UNPACK REFLECTION</button>
+        <div class="thought-content" style="display: none;">
+          <p class="thought-text-expanded">
+            The daisy commands our attention, anchoring the whole frame. But right at its heart, something else is quietly doing its own work, on its own terms. Being what an observer notices first isn't the same as being what matters most.
+          </p>
+        </div>
+        <div class="actions">
+          <a href="https://ko-fi.com/s/737bee862d" target="_blank" class="btn-purchase">
+            Instant high-resolution digital download ($5)
+          </a>
+        </div>
+      </div>
+    </article>
+<!-- Catalog ID: FD-030 (NO ONE PLANNED THIS - Fixed Anchor Trio: Third-to-Last) -->
+    <article class="card">
+      <a href="https://fotodumky.com/f/no-one-planned-this/" class="photo-link">
+        <picture><source type="image/webp" srcset="photos/web/IMG_31030.webp"><img src="photos/web/IMG_31030.jpg" alt="NO ONE PLANNED THIS" loading="lazy"></picture>
+      </a>
+      <div class="card-body">
+        <h2 class="thought-title"><a href="https://fotodumky.com/f/no-one-planned-this/">NO ONE PLANNED THIS</a></h2>
+        <p class="thought-primary">
+          The best things in life are rarely the ones we planned for.
+        </p>
+        <button onclick="toggleThought(this)" class="btn-unpack">UNPACK REFLECTION</button>
+        <div class="thought-content" style="display: none;">
+          <p class="thought-text-expanded">
+            Every flower grew toward its own light, at its own pace, in its own direction. None of them knew what the others were doing. Together, they became something no single flower could have imagined. That may be how the best parts of life happen too.
+          </p>
+        </div>
+        <div class="actions">
+          <a href="https://ko-fi.com/s/2a9462d909" target="_blank" class="btn-purchase">
+            Instant high-resolution digital download ($5)
+          </a>
+        </div>
+      </div>
+    </article>
+<!-- Catalog ID: FD-009 (Fixed Anchor Trio: Second-to-Last) -->
+    <article class="card">
+      <a href="https://fotodumky.com/f/the-weight-of-red/" class="photo-link">
+        <picture><source type="image/webp" srcset="photos/web/IMG_1048.webp"><img src="photos/web/IMG_1048.jpg" alt="THE WEIGHT OF RED" loading="lazy"></picture>
+      </a>
+      <div class="card-body">
+        <h2 class="thought-title"><a href="https://fotodumky.com/f/the-weight-of-red/">THE WEIGHT OF RED</a></h2>
+        <p class="thought-primary">
+          Some moments weigh more in memory than they ever did in life.
+        </p>
+        <button onclick="toggleThought(this)" class="btn-unpack">UNPACK REFLECTION</button>
+        <div class="thought-content" style="display: none;">
+          <p class="thought-text-expanded">
+            Color carries emotion forward through time. A single intense accent can anchor a memory and give it enduring weight long after the event has passed.
+          </p>
+        </div>
+        <div class="actions">
+          <a href="https://ko-fi.com/s/fde3696d4d" target="_blank" class="btn-purchase">
+            Instant high-resolution digital download ($75)
+          </a>
+        </div>
+      </div>
+    </article>
+<!-- Catalog ID: FD-005 (Fixed Anchor Trio: Always Last) -->
+    <article class="card">
+      <a href="https://fotodumky.com/f/visible-and-invisible/" class="photo-link">
+        <picture><source type="image/webp" srcset="photos/web/IMG_4774_READY.webp"><img src="photos/web/IMG_4774_READY.jpg" alt="VISIBLE AND INVISIBLE" loading="lazy"></picture>
+      </a>
+      <div class="card-body">
+        <h2 class="thought-title"><a href="https://fotodumky.com/f/visible-and-invisible/">VISIBLE AND INVISIBLE</a></h2>
+        <p class="thought-primary">
+          "For by Him all things were created... visible and invisible." (Col. 1:16)
+        </p>
+        <button onclick="toggleThought(this)" class="btn-unpack">UNPACK REFLECTION</button>
+        <div class="thought-content" style="display: none;">
+          <p class="thought-text-expanded">
+            What the camera captures on its sensor is only the outer shell. The unseen presence, order, and meaning behind the frame are what truly complete the picture.
+          </p>
+        </div>
+        <div class="actions">
+          <a href="https://ko-fi.com/s/60f8670000" target="_blank" class="btn-purchase">
+            Instant high-resolution digital download ($50)
+          </a>
+        </div>
+      </div>
+    </article>
+  </main>
+
+  <!-- Sample Room Section -->
+  <section class="sample-room-section">
+    <button onclick="toggleRoomViz()" id="roomVizToggleBtn" class="btn-unpack">SEE IT IN A ROOM</button>
+    <div id="roomVizPanel" style="display: none;">
+      <h2 class="sample-room-title">SEE IT IN A ROOM</h2>
+      <div class="sample-room-img-wrapper">
+        <picture>
+          <source type="image/webp" srcset="photos/web/ROOM_SAMPLE.webp">
+          <img id="sampleRoomImg" src="photos/web/ROOM_SAMPLE.jpg" alt="Modern interior featuring a framed FotoDumky print" loading="lazy">
+        </picture>
+      </div>
+
+      <!-- Room Switcher Buttons -->
+      <div class="room-switcher">
+        <button onclick="switchRoom('photos/web/ROOM_SAMPLE.jpg', this)" class="btn-unpack btn-room active-room">ROOM 1 (STILL GREEN)</button>
+        <button onclick="switchRoom('photos/web/ROOM_SAMPLE_BEE.jpg', this)" class="btn-unpack btn-room">ROOM 2 (THERAPY)</button>
+        <button onclick="switchRoom('photos/web/ROOM_SAMPLE_PEACE.jpg', this)" class="btn-unpack btn-room">ROOM 3 (PEACE)</button>
+      </div>
+
+      <div class="fine-print">
+        AI-generated room visualization for presentation only. The photograph itself is 100% real and AI-free.
+      </div>
+    </div>
+  </section>
+
+  <!-- Photographer Bio Section -->
+  <section class="about-section">
+    <picture><source type="image/webp" srcset="photos/web/bio_author.webp"><img src="photos/web/bio_author.jpg" alt="Oleksandr" class="about-img" loading="lazy"></picture>
+    <div class="about-text">
+      <h3>About the Author</h3>
+      <p>
+        I am Oleksandr - a Kyiv-based photographer and visual thinker. FotoDumky is a collection of thoughts expressed through photography. The photograph is the visual carrier & the thought is the fundamental content unit.<br><br>Special gratitude to my wife, Olga - every bloom and flower in these frames is nurtured by her hands.<br><br>Observing light, silence and peace from Kyiv, Ukraine.<br><br>For more than two decades, I have also worked with markets and algorithms. The discipline is different - the habit of looking closely is not.<br><br><a href="https://www.linkedin.com/in/oleksandr-medviediev/" target="_blank" style="color:#7bb384; text-decoration:none; border-bottom:1px solid #7bb384;">LinkedIn</a> &middot; <a href="https://www.mql5.com/en/users/tochk" target="_blank" style="color:#7bb384; text-decoration:none; border-bottom:1px solid #7bb384;">MQL5</a>
+      </p>
+    </div>
+  </section>
+
+  <!-- Support Section (Bottom Global) -->
+  <section class="support-section">
+    <div class="support-title">Support the Project</div>
+    <div class="support-actions">
+      <a href="https://ko-fi.com/fotodumky" target="_blank" class="btn btn-secondary">
+        Buy me a coffee ☕
+      </a>
+      <button onclick="openCryptoModal()" class="btn btn-secondary">
+        Donate Crypto (USDT) ₿
+      </button>
+      <button onclick="openUahModal()" class="btn btn-secondary">
+        Support in UAH ₴
+      </button>
+    </div>
+  </section>
+
+  <footer>
+    <div class="ai-free-badge">100% REAL PHOTOGRAPHY | AI-FREE ZONE</div>
+    <p>
+      Any image is untouched by AI.<br>
+      No editing or modification of any kind has been applied via Photoshop or any other tool (aside from the FotoDumky watermark).<br>
+      Authenticity can be verified with designated software on request.
+    </p>
+    <a href="#top" style="display:inline-block; margin-top:10px; padding:8px 18px; border:1px solid #7bb384; color:#7bb384; border-radius:20px; text-decoration:none; font-size:0.8rem; letter-spacing:1px;">&uarr; BACK TO TOP</a>
+    <p style="margin-top:20px; color:#444;">&copy; FotoDumky. All rights reserved.</p>
+    <p style="margin-top:8px; color:#444; font-size:0.75rem; max-width:500px; margin-left:auto; margin-right:auto;">Purchased downloads are licensed for personal, non-commercial use and personal printing. Copyright remains with Oleksandr / FotoDumky. Resale, redistribution and commercial use are not included.</p>
+  </footer>
+
+  <!-- Crypto Modal -->
+  <div id="cryptoModal" class="modal">
+    <div class="modal-content">
+      <span class="close-btn" onclick="closeCryptoModal()">&times;</span>
+      <h3 style="margin-top:10px; font-weight:400;">Donate USDT (TRC20)</h3>
+      <img src="photos/crypto_qr.png" alt="USDT TRC20 QR Code">
+      <div class="crypto-address" id="walletAddr">TCL6krQDK4rYhQkR8G6qU5WMBuTN7inxKf</div>
+      <button onclick="copyAddress()" class="btn btn-primary" style="padding: 8px 16px; font-size: 0.85rem;">
+        Copy Address 📋
+      </button>
+    </div>
+  </div>
+
+  <!-- UAH Modal -->
+  <div id="uahModal" class="modal">
+    <div class="modal-content">
+      <span class="close-btn" onclick="closeUahModal()">&times;</span>
+      <h3 style="margin-top:10px; font-weight:400;">Support in UAH</h3>
+      <p style="color:#888; font-size:0.85rem; margin-top:5px;">Card-to-card transfer, either bank works</p>
+
+      <p style="color:#7bb384; font-size:0.8rem; letter-spacing:1px; margin:15px 0 5px 0;">PRIVATBANK</p>
+      <div class="crypto-address" id="privatCard">4627055102600532</div>
+      <button onclick="copyCard('privatCard')" class="btn btn-primary" style="padding: 8px 16px; font-size: 0.85rem;">
+        Copy Number 📋
+      </button>
+
+      <p style="color:#7bb384; font-size:0.8rem; letter-spacing:1px; margin:20px 0 5px 0;">MONOBANK</p>
+      <div class="crypto-address" id="monoCard">4441111145887406</div>
+      <button onclick="copyCard('monoCard')" class="btn btn-primary" style="padding: 8px 16px; font-size: 0.85rem;">
+        Copy Number 📋
+      </button>
+    </div>
+  </div>
+
+  <script>
+    function toggleRoomViz() {
+      const panel = document.getElementById('roomVizPanel');
+      const btn = document.getElementById('roomVizToggleBtn');
+      if (panel.style.display === 'block') {
+        panel.style.display = 'none';
+        btn.innerText = 'SEE IT IN A ROOM';
+      } else {
+        panel.style.display = 'block';
+        btn.innerText = 'CLOSE ROOM VIEW';
+      }
+    }
+
+    function toggleThought(btn) {
+      const content = btn.nextElementSibling;
+      if (content.style.display === "block") {
+        content.style.display = "none";
+        btn.innerText = "UNPACK REFLECTION";
+      } else {
+        content.style.display = "block";
+        btn.innerText = "CLOSE REFLECTION";
+      }
+    }
+
+    let overviewBuilt = false;
+    function buildOverviewGrid() {
+      const grid = document.getElementById('overviewGrid');
+      const cards = document.querySelectorAll('main article.card');
+      let html = '';
+      cards.forEach(function(card) {
+        const img = card.querySelector('img');
+        const titleLink = card.querySelector('.thought-title a');
+        if (!img || !titleLink) return;
+        const href = titleLink.getAttribute('href');
+        const title = titleLink.textContent;
+        const src = img.getAttribute('src');
+        const alt = img.getAttribute('alt') || title;
+        html += '<a class="overview-tile" href="' + href + '">' +
+                  '<div class="overview-tile-img-wrap"><img src="' + src + '" alt="' + alt + '" loading="lazy"></div>' +
+                  '<div class="overview-tile-title">' + title + '</div>' +
+                '</a>';
+      });
+      grid.innerHTML = html;
+      overviewBuilt = true;
+    }
+
+    function toggleOverview() {
+      const main = document.querySelector('main');
+      const grid = document.getElementById('overviewGrid');
+      const btn = document.getElementById('overviewToggleBtn');
+      const isGridVisible = grid.style.display !== 'none';
+      if (isGridVisible) {
+        grid.style.display = 'none';
+        main.style.display = '';
+        btn.innerText = 'OVERVIEW';
+      } else {
+        if (!overviewBuilt) {
+          buildOverviewGrid();
+        }
+        main.style.display = 'none';
+        grid.style.display = 'grid';
+        btn.innerText = '\u2190 BACK TO READING';
+      }
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+
+    function switchRoom(imgPath, btn) {
+      document.getElementById('sampleRoomImg').src = imgPath;
+      document.querySelectorAll('.btn-room').forEach(b => b.classList.remove('active-room'));
+      btn.classList.add('active-room');
+    }
+
+    function openCryptoModal() {
+      document.getElementById('cryptoModal').style.display = 'flex';
+    }
+    function closeCryptoModal() {
+      document.getElementById('cryptoModal').style.display = 'none';
+    }
+    function copyAddress() {
+      const addr = document.getElementById('walletAddr').innerText.trim();
+      function showConfirm() {
+        alert('Address copied to clipboard!');
+      }
+      function fallbackCopy() {
+        const temp = document.createElement('textarea');
+        temp.value = addr;
+        temp.style.position = 'fixed';
+        temp.style.left = '-9999px';
+        temp.style.top = '0';
+        document.body.appendChild(temp);
+        temp.focus();
+        temp.select();
+        temp.setSelectionRange(0, addr.length);
+        let success = false;
+        try {
+          success = document.execCommand('copy');
+        } catch (err) {
+          success = false;
+        }
+        document.body.removeChild(temp);
+        if (success) {
+          showConfirm();
+        } else {
+          alert('Could not copy automatically. Address: ' + addr);
+        }
+      }
+      if (navigator.clipboard && navigator.clipboard.writeText && window.isSecureContext) {
+        navigator.clipboard.writeText(addr).then(showConfirm).catch(fallbackCopy);
+      } else {
+        fallbackCopy();
+      }
+    }
+    function openUahModal() {
+      document.getElementById('uahModal').style.display = 'flex';
+    }
+    function closeUahModal() {
+      document.getElementById('uahModal').style.display = 'none';
+    }
+    function copyCard(elementId) {
+      const num = document.getElementById(elementId).innerText.trim();
+      function showConfirm() {
+        alert('Card number copied to clipboard!');
+      }
+      function fallbackCopy() {
+        const temp = document.createElement('textarea');
+        temp.value = num;
+        temp.style.position = 'fixed';
+        temp.style.left = '-9999px';
+        temp.style.top = '0';
+        document.body.appendChild(temp);
+        temp.focus();
+        temp.select();
+        temp.setSelectionRange(0, num.length);
+        let success = false;
+        try {
+          success = document.execCommand('copy');
+        } catch (err) {
+          success = false;
+        }
+        document.body.removeChild(temp);
+        if (success) {
+          showConfirm();
+        } else {
+          alert('Could not copy automatically. Card number: ' + num);
+        }
+      }
+      if (navigator.clipboard && navigator.clipboard.writeText && window.isSecureContext) {
+        navigator.clipboard.writeText(num).then(showConfirm).catch(fallbackCopy);
+      } else {
+        fallbackCopy();
+      }
+    }
+    window.onclick = function(event) {
+      const cryptoModal = document.getElementById('cryptoModal');
+      const uahModal = document.getElementById('uahModal');
+      if (event.target == cryptoModal) {
+        cryptoModal.style.display = 'none';
+      }
+      if (event.target == uahModal) {
+        uahModal.style.display = 'none';
+      }
+    }
+  </script>
+
+</body>
+</html>

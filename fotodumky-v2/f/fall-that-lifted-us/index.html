@@ -32,12 +32,17 @@
     "name": "THE FALL THAT LIFTED US",
     "description": "One apple fell to the ground. The question it raised reached the stars. Gravity was always there - we just needed an apple to notice. We look for wisdom in the clouds, yet the universe reveals its deepest secrets downward. It's not about how high you climb, but what you notice when everything finally lands.",
     "url": "https://fotodumky.com/f/fall-that-lifted-us/",
-    "image": "https://fotodumky.com/photos/IMG_500620.jpg",
+    "image": {
+        "@type": "ImageObject",
+        "url": "https://fotodumky.com/photos/IMG_500620.jpg",
+        "contentUrl": "https://fotodumky.com/photos/IMG_500620.jpg"
+    },
+    "acquireLicensePage": "https://ko-fi.com/s/1574470816",
     "creator": {
-      "@type": "Person",
-      "name": "Oleksandr"
+        "@type": "Person",
+        "name": "Oleksandr"
     }
-  }
+}
   </script>
 
   <style>
@@ -164,7 +169,7 @@
           We look for wisdom in the clouds, yet the universe reveals its deepest secrets downward. It's not about how high you climb, but what you notice when everything finally lands.
         </p>
         <div class="actions">
-          <a href="https://ko-fi.com/s/1574470816" target="_blank" class="btn btn-primary">
+          <a href="https://ko-fi.com/s/1574470816" target="_blank" class="btn btn-primary" onclick="if(window.goatcounter&amp;&amp;window.goatcounter.count){window.goatcounter.count({path:'download-fall-that-lifted-us',title:'Download click',event:true});}">
             Instant high-resolution digital download ($5)
           </a>
           <a href="https://fotodumky.com/" class="btn btn-secondary">
@@ -172,6 +177,7 @@
           </a>
         </div>
 
+        <div id="statsBlock" style="display:none;"></div>
         <div class="say-thanks-wrap" style="margin-top: 16px;">
           <button onclick="toggleShare(this)" class="btn btn-secondary" style="font-size:0.7rem; padding:8px 18px; border-radius:25px;">SAY THANKS</button>
           <div class="share-panel" style="display:none; margin-top:10px; font-size:0.78rem;">

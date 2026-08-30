@@ -32,12 +32,17 @@
     "name": "BRING YOUR OWN WARMTH",
     "description": "Warmth isn't found. It's made. Rising from cool green shadow, the rose carries its own fire. It never asked for the light. It simply brought its own.",
     "url": "https://fotodumky.com/f/bring-your-own-warmth/",
-    "image": "https://fotodumky.com/photos/IMG_20230.png",
+    "image": {
+        "@type": "ImageObject",
+        "url": "https://fotodumky.com/photos/IMG_20230.png",
+        "contentUrl": "https://fotodumky.com/photos/IMG_20230.png"
+    },
+    "acquireLicensePage": "https://ko-fi.com/s/dc8e510db1",
     "creator": {
-      "@type": "Person",
-      "name": "Oleksandr"
+        "@type": "Person",
+        "name": "Oleksandr"
     }
-  }
+}
   </script>
 
   <style>
@@ -164,7 +169,7 @@
           Rising from cool green shadow, the rose carries its own fire. It never asked for the light. It simply brought its own.
         </p>
         <div class="actions">
-          <a href="https://ko-fi.com/s/dc8e510db1" target="_blank" class="btn btn-primary">
+          <a href="https://ko-fi.com/s/dc8e510db1" target="_blank" class="btn btn-primary" onclick="if(window.goatcounter&amp;&amp;window.goatcounter.count){window.goatcounter.count({path:'download-bring-your-own-warmth',title:'Download click',event:true});}">
             Instant high-resolution digital download ($5)
           </a>
           <a href="https://fotodumky.com/" class="btn btn-secondary">
@@ -172,6 +177,7 @@
           </a>
         </div>
 
+        <div id="statsBlock" style="display:none;"></div>
         <div class="say-thanks-wrap" style="margin-top: 16px;">
           <button onclick="toggleShare(this)" class="btn btn-secondary" style="font-size:0.7rem; padding:8px 18px; border-radius:25px;">SAY THANKS</button>
           <div class="share-panel" style="display:none; margin-top:10px; font-size:0.78rem;">

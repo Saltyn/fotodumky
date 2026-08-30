@@ -32,12 +32,17 @@
     "name": "ATTENTION IS A CHOICE",
     "description": "Everything is blurred until something decides to matter. The hoverfly did not ask to be seen. It landed where it needed to be, and the whole field fell out of focus behind it. Clarity was never given. It was aimed.",
     "url": "https://fotodumky.com/f/attention-is-a-choice/",
-    "image": "https://fotodumky.com/photos/IMG_9247.jpeg",
+    "image": {
+        "@type": "ImageObject",
+        "url": "https://fotodumky.com/photos/IMG_9247.jpeg",
+        "contentUrl": "https://fotodumky.com/photos/IMG_9247.jpeg"
+    },
+    "acquireLicensePage": "https://ko-fi.com/s/859db37f11",
     "creator": {
-      "@type": "Person",
-      "name": "Oleksandr"
+        "@type": "Person",
+        "name": "Oleksandr"
     }
-  }
+}
   </script>
 
   <style>
@@ -164,7 +169,7 @@
           The hoverfly did not ask to be seen. It landed where it needed to be, and the whole field fell out of focus behind it. Clarity was never given. It was aimed.
         </p>
         <div class="actions">
-          <a href="https://ko-fi.com/s/859db37f11" target="_blank" class="btn btn-primary">
+          <a href="https://ko-fi.com/s/859db37f11" target="_blank" class="btn btn-primary" onclick="if(window.goatcounter&amp;&amp;window.goatcounter.count){window.goatcounter.count({path:'download-attention-is-a-choice',title:'Download click',event:true});}">
             Instant high-resolution digital download ($5)
           </a>
           <a href="https://fotodumky.com/" class="btn btn-secondary">
@@ -172,6 +177,7 @@
           </a>
         </div>
 
+        <div id="statsBlock" style="display:none;"></div>
         <div class="say-thanks-wrap" style="margin-top: 16px;">
           <button onclick="toggleShare(this)" class="btn btn-secondary" style="font-size:0.7rem; padding:8px 18px; border-radius:25px;">SAY THANKS</button>
           <div class="share-panel" style="display:none; margin-top:10px; font-size:0.78rem;">

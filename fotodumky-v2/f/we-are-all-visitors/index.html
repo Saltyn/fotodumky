@@ -32,12 +32,17 @@
     "name": "WE ARE ALL VISITORS",
     "description": "We arrive. We inhabit a space. We move on. A rose is not real estate. It is a rest stop. The katydid grips the petal for one bright moment, asking nothing more than the view. We spend so much effort trying to own our moments, forgetting we were only ever passing through.",
     "url": "https://fotodumky.com/f/we-are-all-visitors/",
-    "image": "https://fotodumky.com/photos/IMG_40220.jpg",
+    "image": {
+        "@type": "ImageObject",
+        "url": "https://fotodumky.com/photos/IMG_40220.jpg",
+        "contentUrl": "https://fotodumky.com/photos/IMG_40220.jpg"
+    },
+    "acquireLicensePage": "https://ko-fi.com/s/cdc1193ac9",
     "creator": {
-      "@type": "Person",
-      "name": "Oleksandr"
+        "@type": "Person",
+        "name": "Oleksandr"
     }
-  }
+}
   </script>
 
   <style>
@@ -164,7 +169,7 @@
           A rose is not real estate. It is a rest stop. The katydid grips the petal for one bright moment, asking nothing more than the view. We spend so much effort trying to own our moments, forgetting we were only ever passing through.
         </p>
         <div class="actions">
-          <a href="https://ko-fi.com/s/cdc1193ac9" target="_blank" class="btn btn-primary">
+          <a href="https://ko-fi.com/s/cdc1193ac9" target="_blank" class="btn btn-primary" onclick="if(window.goatcounter&amp;&amp;window.goatcounter.count){window.goatcounter.count({path:'download-we-are-all-visitors',title:'Download click',event:true});}">
             Instant high-resolution digital download ($5)
           </a>
           <a href="https://fotodumky.com/" class="btn btn-secondary">
@@ -172,6 +177,7 @@
           </a>
         </div>
 
+        <div id="statsBlock" style="display:none;"></div>
         <div class="say-thanks-wrap" style="margin-top: 16px;">
           <button onclick="toggleShare(this)" class="btn btn-secondary" style="font-size:0.7rem; padding:8px 18px; border-radius:25px;">SAY THANKS</button>
           <div class="share-panel" style="display:none; margin-top:10px; font-size:0.78rem;">

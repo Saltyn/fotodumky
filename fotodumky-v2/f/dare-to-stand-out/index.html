@@ -30,14 +30,19 @@
     "@context": "https://schema.org",
     "@type": "VisualArtwork",
     "name": "DARE TO STAND OUT",
-    "description": "Be the color, not the background. Think of walking into a room where everyone is dressed in safe, muted shades of corporate gray because it is \u201cappropriate.\u201d Choosing to wear a bright, expressive jacket isn't just about fashion - it is a living statement that you refuse to let your individuality be muted by the expectations of the crowd.",
+    "description": "Be the color, not the background. Think of walking into a room where everyone is dressed in safe, muted shades of corporate gray because it is “appropriate.” Choosing to wear a bright, expressive jacket isn't just about fashion - it is a living statement that you refuse to let your individuality be muted by the expectations of the crowd.",
     "url": "https://fotodumky.com/f/dare-to-stand-out/",
-    "image": "https://fotodumky.com/photos/IMG_46830.jpg",
+    "image": {
+        "@type": "ImageObject",
+        "url": "https://fotodumky.com/photos/IMG_46830.jpg",
+        "contentUrl": "https://fotodumky.com/photos/IMG_46830.jpg"
+    },
+    "acquireLicensePage": "https://ko-fi.com/s/65123ecd34",
     "creator": {
-      "@type": "Person",
-      "name": "Oleksandr"
+        "@type": "Person",
+        "name": "Oleksandr"
     }
-  }
+}
   </script>
 
   <style>
@@ -164,7 +169,7 @@
           Think of walking into a room where everyone is dressed in safe, muted shades of corporate gray because it is &ldquo;appropriate.&rdquo; Choosing to wear a bright, expressive jacket isn't just about fashion - it is a living statement that you refuse to let your individuality be muted by the expectations of the crowd.
         </p>
         <div class="actions">
-          <a href="https://ko-fi.com/s/65123ecd34" target="_blank" class="btn btn-primary">
+          <a href="https://ko-fi.com/s/65123ecd34" target="_blank" class="btn btn-primary" onclick="if(window.goatcounter&amp;&amp;window.goatcounter.count){window.goatcounter.count({path:'download-dare-to-stand-out',title:'Download click',event:true});}">
             Instant high-resolution digital download ($5)
           </a>
           <a href="https://fotodumky.com/" class="btn btn-secondary">
@@ -172,6 +177,7 @@
           </a>
         </div>
 
+        <div id="statsBlock" style="display:none;"></div>
         <div class="say-thanks-wrap" style="margin-top: 16px;">
           <button onclick="toggleShare(this)" class="btn btn-secondary" style="font-size:0.7rem; padding:8px 18px; border-radius:25px;">SAY THANKS</button>
           <div class="share-panel" style="display:none; margin-top:10px; font-size:0.78rem;">

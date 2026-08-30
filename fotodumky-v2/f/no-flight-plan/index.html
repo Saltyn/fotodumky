@@ -32,12 +32,17 @@
     "name": "NO FLIGHT PLAN",
     "description": "Not every moment needs a destination. The best plan can be no plan at all.",
     "url": "https://fotodumky.com/f/no-flight-plan/",
-    "image": "https://fotodumky.com/photos/IMG_47242.jpg",
+    "image": {
+        "@type": "ImageObject",
+        "url": "https://fotodumky.com/photos/IMG_47242.jpg",
+        "contentUrl": "https://fotodumky.com/photos/IMG_47242.jpg"
+    },
+    "acquireLicensePage": "https://ko-fi.com/s/b8efd6ca72",
     "creator": {
-      "@type": "Person",
-      "name": "Oleksandr"
+        "@type": "Person",
+        "name": "Oleksandr"
     }
-  }
+}
   </script>
 
   <style>
@@ -164,7 +169,7 @@
           Not every moment needs a destination. The best plan can be no plan at all.
         </p>
         <div class="actions">
-          <a href="https://ko-fi.com/s/b8efd6ca72" target="_blank" class="btn btn-primary">
+          <a href="https://ko-fi.com/s/b8efd6ca72" target="_blank" class="btn btn-primary" onclick="if(window.goatcounter&amp;&amp;window.goatcounter.count){window.goatcounter.count({path:'download-no-flight-plan',title:'Download click',event:true});}">
             Instant high-resolution digital download ($15)
           </a>
           <a href="https://fotodumky.com/" class="btn btn-secondary">
@@ -172,6 +177,7 @@
           </a>
         </div>
 
+        <div id="statsBlock" style="display:none;"></div>
         <div class="say-thanks-wrap" style="margin-top: 16px;">
           <button onclick="toggleShare(this)" class="btn btn-secondary" style="font-size:0.7rem; padding:8px 18px; border-radius:25px;">SAY THANKS</button>
           <div class="share-panel" style="display:none; margin-top:10px; font-size:0.78rem;">

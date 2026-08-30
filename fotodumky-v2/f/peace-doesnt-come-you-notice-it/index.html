@@ -32,12 +32,17 @@
     "name": "PEACE DOESN'T COME. YOU NOTICE IT",
     "description": "Peace is not something you chase down or build with effort. It lives quietly beneath the noise of everyday life, waiting to be seen. The moment you pause and observe, you realize it was never missing.",
     "url": "https://fotodumky.com/f/peace-doesnt-come-you-notice-it/",
-    "image": "https://fotodumky.com/photos/IMG_4248_READY.jpg",
+    "image": {
+        "@type": "ImageObject",
+        "url": "https://fotodumky.com/photos/IMG_4248_READY.jpg",
+        "contentUrl": "https://fotodumky.com/photos/IMG_4248_READY.jpg"
+    },
+    "acquireLicensePage": "https://ko-fi.com/s/1b818d1d4f",
     "creator": {
-      "@type": "Person",
-      "name": "Oleksandr"
+        "@type": "Person",
+        "name": "Oleksandr"
     }
-  }
+}
   </script>
 
   <style>
@@ -175,7 +180,7 @@
         </p>
         <div class="actions">
           <div class="action-buttons">
-            <a href="https://ko-fi.com/s/1b818d1d4f" target="_blank" class="btn btn-primary">
+            <a href="https://ko-fi.com/s/1b818d1d4f" target="_blank" class="btn btn-primary" onclick="if(window.goatcounter&amp;&amp;window.goatcounter.count){window.goatcounter.count({path:'download-peace-doesnt-come-you-notice-it',title:'Download click',event:true});}">
               Instant high-resolution digital download ($25)
             </a>
             <a href="https://fotodumky.com/" class="btn btn-secondary">
@@ -185,6 +190,7 @@
 
         </div>
 
+        <div id="statsBlock" style="display:none;"></div>
         <div class="say-thanks-wrap" style="margin-top: 16px;">
           <button onclick="toggleShare(this)" class="btn btn-secondary" style="font-size:0.7rem; padding:8px 18px; border-radius:25px;">SAY THANKS</button>
           <div class="share-panel" style="display:none; margin-top:10px; font-size:0.78rem;">

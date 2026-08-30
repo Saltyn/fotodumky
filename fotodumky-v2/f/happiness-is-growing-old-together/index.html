@@ -32,12 +32,17 @@
     "name": "HAPPINESS IS GROWING OLD TOGETHER",
     "description": "The internet is full of shiny colors and perfect moments. But life isn't always like that. Happiness is still being there when the petals fall - side by side through every season.",
     "url": "https://fotodumky.com/f/happiness-is-growing-old-together/",
-    "image": "https://fotodumky.com/photos/IMG_397700.jpg",
+    "image": {
+        "@type": "ImageObject",
+        "url": "https://fotodumky.com/photos/IMG_397700.jpg",
+        "contentUrl": "https://fotodumky.com/photos/IMG_397700.jpg"
+    },
+    "acquireLicensePage": "https://ko-fi.com/s/41df0e2579",
     "creator": {
-      "@type": "Person",
-      "name": "Oleksandr"
+        "@type": "Person",
+        "name": "Oleksandr"
     }
-  }
+}
   </script>
 
   <style>
@@ -162,7 +167,7 @@
           The internet is full of shiny colors and perfect moments. But life isn&#x27;t always like that. Happiness is still being there when the petals fall - side by side through every season.
         </p>
         <div class="actions">
-          <a href="https://ko-fi.com/s/41df0e2579" target="_blank" class="btn btn-primary">
+          <a href="https://ko-fi.com/s/41df0e2579" target="_blank" class="btn btn-primary" onclick="if(window.goatcounter&amp;&amp;window.goatcounter.count){window.goatcounter.count({path:'download-happiness-is-growing-old-together',title:'Download click',event:true});}">
             Instant high-resolution digital download ($5)
           </a>
           <a href="https://fotodumky.com/" class="btn btn-secondary">
@@ -170,6 +175,7 @@
           </a>
         </div>
 
+        <div id="statsBlock" style="display:none;"></div>
         <div class="say-thanks-wrap" style="margin-top: 16px;">
           <button onclick="toggleShare(this)" class="btn btn-secondary" style="font-size:0.7rem; padding:8px 18px; border-radius:25px;">SAY THANKS</button>
           <div class="share-panel" style="display:none; margin-top:10px; font-size:0.78rem;">

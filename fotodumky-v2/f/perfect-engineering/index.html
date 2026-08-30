@@ -32,12 +32,17 @@
     "name": "PERFECT ENGINEERING",
     "description": "Flawless aerodynamics. Nothing unnecessary. Nothing accidental. No roar of an engine, no turbulence, no stress on the frame. Every detail earns its place.",
     "url": "https://fotodumky.com/f/perfect-engineering/",
-    "image": "https://fotodumky.com/photos/IMG_46700.jpg",
+    "image": {
+        "@type": "ImageObject",
+        "url": "https://fotodumky.com/photos/IMG_46700.jpg",
+        "contentUrl": "https://fotodumky.com/photos/IMG_46700.jpg"
+    },
+    "acquireLicensePage": "https://ko-fi.com/s/8a37c57f98",
     "creator": {
-      "@type": "Person",
-      "name": "Oleksandr"
+        "@type": "Person",
+        "name": "Oleksandr"
     }
-  }
+}
   </script>
 
   <style>
@@ -165,7 +170,7 @@
           Four independent wings, instantaneous vectoring, and zero structural redundancy. Before human flight was ever drafted, the ultimate high-performance framework was already deployed in silence.
         </p>
         <div class="actions">
-          <a href="https://ko-fi.com/s/8a37c57f98" target="_blank" class="btn btn-primary">
+          <a href="https://ko-fi.com/s/8a37c57f98" target="_blank" class="btn btn-primary" onclick="if(window.goatcounter&amp;&amp;window.goatcounter.count){window.goatcounter.count({path:'download-perfect-engineering',title:'Download click',event:true});}">
             Instant high-resolution digital download ($5)
           </a>
           <a href="https://fotodumky.com/" class="btn btn-secondary">
@@ -173,6 +178,7 @@
           </a>
         </div>
 
+        <div id="statsBlock" style="display:none;"></div>
         <div class="say-thanks-wrap" style="margin-top: 16px;">
           <button onclick="toggleShare(this)" class="btn btn-secondary" style="font-size:0.7rem; padding:8px 18px; border-radius:25px;">SAY THANKS</button>
           <div class="share-panel" style="display:none; margin-top:10px; font-size:0.78rem;">

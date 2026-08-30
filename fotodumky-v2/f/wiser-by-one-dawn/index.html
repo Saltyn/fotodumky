@@ -32,12 +32,17 @@
     "name": "WISER BY ONE DAWN",
     "description": "You don't need another lifetime to become wiser. Sometimes one night is enough. The stems stand where they stood yesterday, but the morning has left something behind. A little water. A little light. A different understanding of what it means to be here. We don't always grow through what happens to us. Sometimes we simply wake up and see the same world differently.",
     "url": "https://fotodumky.com/f/wiser-by-one-dawn/",
-    "image": "https://fotodumky.com/photos/IMG_42000.jpg",
+    "image": {
+        "@type": "ImageObject",
+        "url": "https://fotodumky.com/photos/IMG_42000.jpg",
+        "contentUrl": "https://fotodumky.com/photos/IMG_42000.jpg"
+    },
+    "acquireLicensePage": "https://ko-fi.com/s/a3c89e8c63",
     "creator": {
-      "@type": "Person",
-      "name": "Oleksandr"
+        "@type": "Person",
+        "name": "Oleksandr"
     }
-  }
+}
   </script>
 
   <style>
@@ -166,7 +171,7 @@
           We don't always grow through what happens to us. Sometimes we simply wake up and see the same world differently.
         </p>
         <div class="actions">
-          <a href="https://ko-fi.com/s/a3c89e8c63" target="_blank" class="btn btn-primary">
+          <a href="https://ko-fi.com/s/a3c89e8c63" target="_blank" class="btn btn-primary" onclick="if(window.goatcounter&amp;&amp;window.goatcounter.count){window.goatcounter.count({path:'download-wiser-by-one-dawn',title:'Download click',event:true});}">
             Instant high-resolution digital download ($5)
           </a>
           <a href="https://fotodumky.com/" class="btn btn-secondary">
@@ -174,6 +179,7 @@
           </a>
         </div>
 
+        <div id="statsBlock" style="display:none;"></div>
         <div class="say-thanks-wrap" style="margin-top: 16px;">
           <button onclick="toggleShare(this)" class="btn btn-secondary" style="font-size:0.7rem; padding:8px 18px; border-radius:25px;">SAY THANKS</button>
           <div class="share-panel" style="display:none; margin-top:10px; font-size:0.78rem;">

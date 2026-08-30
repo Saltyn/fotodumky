@@ -32,12 +32,17 @@
     "name": "THE NOISE YOU NEVER CHOSE",
     "description": "The flower is quiet. The world behind it is not. We rarely notice how much energy we spend processing what we never chose to notice. Sometimes peace begins with letting the background remain blurred.",
     "url": "https://fotodumky.com/f/the-noise-you-never-chose/",
-    "image": "https://fotodumky.com/photos/IMG_086300.jpg",
+    "image": {
+        "@type": "ImageObject",
+        "url": "https://fotodumky.com/photos/IMG_086300.jpg",
+        "contentUrl": "https://fotodumky.com/photos/IMG_086300.jpg"
+    },
+    "acquireLicensePage": "https://ko-fi.com/s/7f38a6d2c4",
     "creator": {
-      "@type": "Person",
-      "name": "Oleksandr"
+        "@type": "Person",
+        "name": "Oleksandr"
     }
-  }
+}
   </script>
 
   <style>
@@ -164,7 +169,7 @@
           We rarely notice how much energy we spend processing what we never chose to notice. Sometimes peace begins with letting the background remain blurred.
         </p>
         <div class="actions">
-          <a href="https://ko-fi.com/s/7f38a6d2c4" target="_blank" class="btn btn-primary">
+          <a href="https://ko-fi.com/s/7f38a6d2c4" target="_blank" class="btn btn-primary" onclick="if(window.goatcounter&amp;&amp;window.goatcounter.count){window.goatcounter.count({path:'download-the-noise-you-never-chose',title:'Download click',event:true});}">
             Instant high-resolution digital download ($5)
           </a>
           <a href="https://fotodumky.com/" class="btn btn-secondary">
@@ -172,6 +177,7 @@
           </a>
         </div>
 
+        <div id="statsBlock" style="display:none;"></div>
         <div class="say-thanks-wrap" style="margin-top: 16px;">
           <button onclick="toggleShare(this)" class="btn btn-secondary" style="font-size:0.7rem; padding:8px 18px; border-radius:25px;">SAY THANKS</button>
           <div class="share-panel" style="display:none; margin-top:10px; font-size:0.78rem;">

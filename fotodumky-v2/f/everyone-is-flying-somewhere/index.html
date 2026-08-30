@@ -32,12 +32,17 @@
     "name": "EVERYONE IS FLYING SOMEWHERE",
     "description": "Everyone is flying somewhere. Seeing the world, meeting people, collecting impressions. And me? Still here, sitting with this stupid camera, photographing flowers, insects and whatever else refuses to leave. Apparently, this is my way of seeing the world.",
     "url": "https://fotodumky.com/f/everyone-is-flying-somewhere/",
-    "image": "https://fotodumky.com/photos/IMG_39600.jpg",
+    "image": {
+        "@type": "ImageObject",
+        "url": "https://fotodumky.com/photos/IMG_39600.jpg",
+        "contentUrl": "https://fotodumky.com/photos/IMG_39600.jpg"
+    },
+    "acquireLicensePage": "https://ko-fi.com/s/d37f9b9fb0",
     "creator": {
-      "@type": "Person",
-      "name": "Oleksandr"
+        "@type": "Person",
+        "name": "Oleksandr"
     }
-  }
+}
   </script>
 
   <style>
@@ -177,7 +182,7 @@
         </p>
         <div class="actions">
           <div class="action-buttons">
-            <a href="https://ko-fi.com/s/d37f9b9fb0" target="_blank" class="btn btn-primary">
+            <a href="https://ko-fi.com/s/d37f9b9fb0" target="_blank" class="btn btn-primary" onclick="if(window.goatcounter&amp;&amp;window.goatcounter.count){window.goatcounter.count({path:'download-everyone-is-flying-somewhere',title:'Download click',event:true});}">
               Instant high-resolution digital download ($5)
             </a>
             <a href="https://fotodumky.com/" class="btn btn-secondary">
@@ -187,6 +192,7 @@
           
         </div>
 
+        <div id="statsBlock" style="display:none;"></div>
         <div class="say-thanks-wrap" style="margin-top: 16px;">
           <button onclick="toggleShare(this)" class="btn btn-secondary" style="font-size:0.7rem; padding:8px 18px; border-radius:25px;">SAY THANKS</button>
           <div class="share-panel" style="display:none; margin-top:10px; font-size:0.78rem;">

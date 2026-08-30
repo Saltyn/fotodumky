@@ -32,12 +32,17 @@
     "name": "WISER BY ONE DAWN",
     "description": "You don't need another lifetime to become wiser. Sometimes one night is enough. The stems stand where they stood yesterday, but the morning has left something behind. A little water. A little light. A different understanding of what it means to be here. We don't always grow through what happens to us. Sometimes we simply wake up and see the same world differently.",
     "url": "https://fotodumky.com/f/wiser-by-one-dawn/",
-    "image": "https://fotodumky.com/photos/IMG_42000.jpg",
+    "image": {
+        "@type": "ImageObject",
+        "url": "https://fotodumky.com/photos/IMG_42000.jpg",
+        "contentUrl": "https://fotodumky.com/photos/IMG_42000.jpg"
+    },
+    "acquireLicensePage": "https://ko-fi.com/s/a3c89e8c63",
     "creator": {
-      "@type": "Person",
-      "name": "Oleksandr"
+        "@type": "Person",
+        "name": "Oleksandr"
     }
-  }
+}
   </script>
 
   <style>
@@ -155,7 +160,7 @@
 
   <main style="width: 100%; display: flex; justify-content: center;">
     <article class="card">
-      <img src="../../photos/IMG_42000.jpg" alt="WISER BY ONE DAWN" loading="eager">
+      <picture><source type="image/webp" srcset="../../photos/web/IMG_42000.webp"><img src="../../photos/web/IMG_42000.jpg" alt="WISER BY ONE DAWN" loading="eager"></picture>
       <div class="card-body">
         <h2 class="thought-title">WISER BY ONE DAWN</h2>
         <p class="thought-text">
@@ -166,28 +171,69 @@
           We don't always grow through what happens to us. Sometimes we simply wake up and see the same world differently.
         </p>
         <div class="actions">
-          <a href="https://ko-fi.com/s/a3c89e8c63" target="_blank" class="btn btn-primary">
+          <a href="https://ko-fi.com/s/a3c89e8c63" target="_blank" class="btn btn-primary" onclick="if(window.goatcounter&amp;&amp;window.goatcounter.count){window.goatcounter.count({path:'download-wiser-by-one-dawn',title:'Download click',event:true});}">
             Instant high-resolution digital download ($5)
           </a>
           <a href="https://fotodumky.com/" class="btn btn-secondary">
             EXPLORE GALLERY
           </a>
         </div>
+
+        <div id="statsBlock" style="display:none;"></div>
+        <div class="say-thanks-wrap" style="margin-top: 16px;">
+          <button onclick="toggleShare(this)" class="btn btn-secondary" style="font-size:0.7rem; padding:8px 18px; border-radius:25px;">SAY THANKS</button>
+          <div class="share-panel" style="display:none; margin-top:10px; font-size:0.78rem;">
+            <a href="javascript:void(0)" onclick="copyShareLink(this, 'https://fotodumky.com/f/wiser-by-one-dawn/')" style="color:#7bb384; text-decoration:none; border-bottom:1px solid #7bb384; margin:0 6px;">Copy Link</a>
+            <a href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Ffotodumky.com%2Ff%2Fwiser-by-one-dawn%2F" target="_blank" rel="noopener" style="color:#7bb384; text-decoration:none; border-bottom:1px solid #7bb384; margin:0 6px;">Facebook</a>
+            <a href="https://twitter.com/intent/tweet?text=WISER%20BY%20ONE%20DAWN.%20A%20photograph%20from%20FotoDumky.&url=https%3A%2F%2Ffotodumky.com%2Ff%2Fwiser-by-one-dawn%2F" target="_blank" rel="noopener" style="color:#7bb384; text-decoration:none; border-bottom:1px solid #7bb384; margin:0 6px;">X</a>
+            <a href="https://www.linkedin.com/sharing/share-offsite/?url=https%3A%2F%2Ffotodumky.com%2Ff%2Fwiser-by-one-dawn%2F" target="_blank" rel="noopener" style="color:#7bb384; text-decoration:none; border-bottom:1px solid #7bb384; margin:0 6px;">LinkedIn</a>
+            <a href="mailto:?subject=WISER%20BY%20ONE%20DAWN%20-%20FotoDumky&body=WISER%20BY%20ONE%20DAWN.%20A%20photograph%20from%20FotoDumky.%0A%0Ahttps%3A%2F%2Ffotodumky.com%2Ff%2Fwiser-by-one-dawn%2F" style="color:#7bb384; text-decoration:none; border-bottom:1px solid #7bb384; margin:0 6px;">Email</a>
+          </div>
+        </div>
       </div>
     </article>
   </main>
 
   <footer>
-    <div class="ai-free-badge">100% REAL PHOTOGRAPHY | AI-FREE ZONE</div>
+    <div class="ai-free-badge">100% REAL PHOTOGRAPHY | AI-FREE</div>
     <p>
       Any image is untouched by AI.<br>
       No editing or modification of any kind has been applied via Photoshop or any other tool (aside from the FotoDumky watermark).<br>
       Authenticity can be verified with designated software on request.
     </p>
-    <p style="margin-top:20px; color:#444;">&copy; FotoDumky. All rights reserved.</p>
+    <p style="margin-top:20px; color:#444;">Copyright &copy; FotoDumky. All rights reserved.</p>
+    <p style="margin-top:8px; color:#444; font-size:0.75rem; max-width:520px; margin-left:auto; margin-right:auto;">
+      <strong>License &amp; Usage Rights:</strong> Every purchase includes a Personal, Non-Commercial Fine-Art License. You may download the high-resolution file, make physical prints for personal home or office decor, use it as wallpaper on personal devices and keep backup copies. You may not resell, redistribute, sublicense or use the image for commercial advertising or print-on-demand resale. Copyright remains 100% with FotoDumky.</p>
   </footer>
 
   <script>
+    function toggleShare(btn) {
+      const panel = btn.nextElementSibling;
+      panel.style.display = (panel.style.display === 'block') ? 'none' : 'block';
+    }
+    function copyShareLink(el, url) {
+      function showConfirm() {
+        const orig = el.innerText;
+        el.innerText = 'Copied!';
+        setTimeout(function() { el.innerText = orig; }, 1500);
+      }
+      function fallbackCopy() {
+        const temp = document.createElement('textarea');
+        temp.value = url;
+        temp.style.position = 'fixed';
+        temp.style.left = '-9999px';
+        document.body.appendChild(temp);
+        temp.focus();
+        temp.select();
+        try { document.execCommand('copy'); showConfirm(); } catch (e) { alert('Link: ' + url); }
+        document.body.removeChild(temp);
+      }
+      if (navigator.clipboard && navigator.clipboard.writeText && window.isSecureContext) {
+        navigator.clipboard.writeText(url).then(showConfirm).catch(fallbackCopy);
+      } else {
+        fallbackCopy();
+      }
+    }
     document.addEventListener('contextmenu', function(e) {
       if (e.target.tagName === 'IMG') {
         e.preventDefault();
